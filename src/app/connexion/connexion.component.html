@@ -21,10 +21,12 @@
         </button>
       </div>
       <div class="col-4 ">
-        <button type="button" class="btn account-auth ml-auto " id="google-auth">
+        <button (click)="loginGoogle()" type="button" class="btn account-auth ml-auto google" id="google-auth">
           <img src="assets/img/google.svg " alt="google-icon">
         </button>
       </div>
     </div>
   </div>
+
+  <button (click)="signOut()">Sign Out</button>
 </div>
