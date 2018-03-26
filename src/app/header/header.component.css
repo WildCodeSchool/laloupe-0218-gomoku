@@ -1,217 +1,23 @@
-.container {
-  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) infinite;
-  transform: translate3d(0, 0, 0);
-  width: 600px;
-}
-
-@keyframes shake {
-  10%,
-  90% {
-    transform: translate3d(0, -1px, 0);
-  }
-  20%,
-  80% {
-    transform: translate3d(0, 2px, 0);
-  }
-  30%,
-  50%,
-  70% {
-    transform: translate3d(0, -4px, 0);
-  }
-  40%,
-  60% {
-    transform: translate3d(0, 4px, 0);
-  }
+@font-face {
+  font-family: "Moyko.ttf";
+  src: url(assets/fonts/Moyko.ttf);
 }
 
 h1 {
-  margin-top: 5%;
+  margin-top: 15%;
   height: 100px;
-  font-size: 4em;
+  font-size: 8em;
   line-height: 100px;
   font-weight: 700;
-}
-
-.col-4 {
-  margin-top: 100px;
-}
-
-.cabintractor {
-  margin: 0 auto;
-  border: 1px solid black;
-  background: rgb(199, 149, 11);
-  width: 50px;
-  height: 50px;
-  padding: 5px;
-}
-
-.fenetre {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  background: cyan;
-  overflow: hidden;
-}
-
-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-top: -5px;
-}
-
-.capot {
-  border: 1px solid black;
-  background: rgb(199, 149, 11);
-  width: 150px;
-  height: 40px;
-  position: absolute;
-  margin-left: 15px;
-}
-
-.bras {
-  position: absolute;
-  background: rgb(199, 149, 11);
-  border: 1px solid black;
-  width: 70px;
-  height: 20px;
-  margin-top: -120px;
-  margin-left: 340px;
-  z-index: -5000;
-  transform: rotate(-50deg);
-}
-
-.bras2 {
-  position: absolute;
-  background: rgb(199, 149, 11);
-  border: 1px solid black;
-  width: 70px;
-  height: 20px;
-  margin-top: -120px;
-  margin-left: 375px;
-  z-index: -6000;
-  transform: rotate(45deg);
-}
-
-.pelle {
-  position: absolute;
-  background: rgb(48, 48, 48);
-  width: 30px;
-  height: 30px;
-  border-radius: 10px;
-  margin-top: -100px;
-  margin-left: 420px;
-}
-
-.fa-cog {
-  margin-top: 15px;
+  font-family: "Moyko.ttf";
+  text-shadow: -2px 3px 8px rgba(150, 150, 150, 0.79);
 }
 
 p {
-  margin-top: 350px;
-  font-size: 3em;
-  font-weight: bold;
-  font-style: italic;
-  -webkit-animation: colorchange 15s infinite alternate;
-}
-
-.fa-exclamation-triangle {
-  -webkit-animation: colorchange 15s infinite alternate;
-}
-
-@-webkit-keyframes colorchange {
-  0% {
-    color: black;
-  }
-  5% {
-    color: rgb(199, 149, 11);
-  }
-  10% {
-    color: black;
-  }
-  15% {
-    color: rgb(199, 149, 11);
-  }
-  20% {
-    color: black;
-  }
-  25% {
-    color: rgb(199, 149, 11);
-  }
-  30% {
-    color: black;
-  }
-  35% {
-    color: rgb(199, 149, 11);
-  }
-  40% {
-    color: black;
-  }
-  45% {
-    color: rgb(199, 149, 11);
-  }
-  50% {
-    color: black;
-  }
-  55% {
-    color: rgb(199, 149, 11);
-  }
-  60% {
-    color: black;
-  }
-  65% {
-    color: rgb(199, 149, 11);
-  }
-  70% {
-    color: black;
-  }
-  75% {
-    color: rgb(199, 149, 11);
-  }
-  80% {
-    color: black;
-  }
-  85% {
-    color: rgb(199, 149, 11);
-  }
-  90% {
-    color: black;
-  }
-  95% {
-    color: rgb(199, 149, 11);
-  }
-  100% {
-    color: black;
-  }
-}
-
-.full-large-hover {
-  padding: 0;
-  position: absolute;
-  -webkit-transition: 3s ease-in;
-  -moz-transition: 3s ease-in;
-  -o-transition: 3s ease-in;
-  transition: 3s ease-in;
-}
-
-.full-large-hover {
-  -webkit-animation: linear infinite alternate;
-  -webkit-animation-name: run;
-  -webkit-animation-duration: 10s;
-}
-
-@-webkit-keyframes run {
-  0% {
-    left: -100%;
-  }
-  50% {
-    left: 100%;
-  }
-  100% {
-    left: -100%;
-  }
-}
-
-audio {
-  display: none;
+  margin-top: -100px;
+  height: 200px;
+  font-size: 10em;
+  font-weight: 700;
+  font-family: "Moyko.ttf";
+  text-shadow: -2px 3px 8px rgba(150, 150, 150, 0.79);
 }
