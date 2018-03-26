@@ -8,11 +8,11 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
-<<<<<<< HEAD
+import { GameComponent } from './game/game.component';
 import { FooterComponent } from './footer/footer.component';
 import { CompteComponent } from './compte/compte.component';
 
-=======
+
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './auth.service';
 var config = {
@@ -22,13 +22,14 @@ var config = {
   projectId: "gomoku-projet-2",
   storageBucket: "gomoku-projet-2.appspot.com",
   messagingSenderId: "1001534234475"
-};
->>>>>>> connexion
+}
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ConnexionComponent,
+    GameComponent,
     FooterComponent,
     CompteComponent,
   ],
@@ -40,12 +41,7 @@ var config = {
     AngularFireAuthModule,
     AppRoutingModule,
   ],
-<<<<<<< HEAD
-  providers: [],
-  bootstrap: [AppComponent],
-=======
   providers: [AuthService],
   bootstrap: [AppComponent]
->>>>>>> connexion
 })
 export class AppModule { }

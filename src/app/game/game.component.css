@@ -1,0 +1,35 @@
+.container-fluid {
+    background-color: white
+}
+
+.container {
+    padding-top: 8%;
+}
+
+.title {
+    font-size: 4em;
+    text-align: center;
+    padding-left: 5%;
+}
+
+.icon {
+padding-top: 25%;
+}
+
+.border {
+    border: 3px solid black
+}
+
+body {
+    background-color: lightgray
+}
+
+.textGame {
+    text-decoration: underline;
+    padding-left: 13%;
+    padding-bottom: 2%;
+}
+
+.square {
+    margin: 0 auto;
+}
