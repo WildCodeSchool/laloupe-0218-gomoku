@@ -9,13 +9,17 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { GameComponent } from './game/game.component';
+import { FooterComponent } from './footer/footer.component';
+import { CompteComponent } from './compte/compte.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ConnexionComponent,
-    GameComponent
+    GameComponent,
+    FooterComponent,
+    CompteComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +27,6 @@ import { GameComponent } from './game/game.component';
     AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
