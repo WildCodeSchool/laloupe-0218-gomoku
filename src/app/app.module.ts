@@ -8,12 +8,16 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
+import { FooterComponent } from './footer/footer.component';
+import { CompteComponent } from './compte/compte.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    FooterComponent,
+    CompteComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,6 +25,6 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
