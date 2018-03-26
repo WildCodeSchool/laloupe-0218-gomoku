@@ -8,12 +8,14 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
