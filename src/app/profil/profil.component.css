@@ -1,0 +1,23 @@
+.form-style-6 {
+  font: 95% Arial, Helvetica, sans-serif;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 16px;
+  background: white;
+  border: 2px solid black;
+}
+
+.form-style-6 h1 {
+  background: orange;
+  padding: 20px 0;
+  font-size: 140%;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  margin: -16px -16px 16px -16px;
+}
+
+.form-style-6 p {
+  text-align: center;
+  padding-top: 5%;
+}

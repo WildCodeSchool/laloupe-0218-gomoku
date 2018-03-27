@@ -1,31 +1,39 @@
-.nlj{
-    color: #aaa;
+@media screen and (min-width:500px) and (max-width:769px) {
+  .fixed-bottom {
+    background-image: url(assets/img/tweed.png);
+    height: 70px;
+  }
+  .nlj {
+    color: white;
     text-decoration: none;
-    font-size: 0.5em;
+    font-size: 1em;
     text-align: left;
-    padding-left: 5%;
-}
-.rating {
+  }
+  .rating {
     float: left;
     direction: rtl;
- }
- .rating a {
-    color: #aaa;
+  }
+  .rating .stars {
+    color: white;
     text-decoration: none;
-    font-size: 3em;
+    font-size: 2em;
     transition: color .4s;
- }
- .rating a:hover,
- .rating a:focus,
- .rating a:hover ~ a,
- .rating a:focus ~ a {
+  }
+  .rating a:hover,
+  .rating a:focus,
+  .rating a:hover~a,
+  .rating a:focus~a {
     color: orange;
     cursor: pointer;
- }
-
- .logo{
-    padding-top: 3%;
-    color: #aaa;
+  }
+  .copyright {
+    color: white;
     text-decoration: none;
-    font-size: 1.3em;
- }
+    font-size: 0.8em;
+    height: 100%;
+    line-height: 120px;
+  }
+  .col-7 {
+    padding-left: 0 !important;
+  }
+}
