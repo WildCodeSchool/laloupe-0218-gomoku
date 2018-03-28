@@ -14,12 +14,12 @@
     width: 25px;
     height: auto;
   }
-  .input-group-lg:first-child {
-    margin-top: 0;
-  }
   .input-group-lg {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+  .input-group-lg:first-child {
+    margin-top: 0;
   }
   .margin-top-50 {
     margin-top: 100px;
@@ -125,12 +125,12 @@
     width: 25px;
     height: auto;
   }
-  .input-group-lg:first-child {
-    margin-top: 0;
-  }
   .input-group-lg {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+  .input-group-lg:first-child {
+    margin-top: 0;
   }
   .margin-top-50 {
     margin-top: 100px;

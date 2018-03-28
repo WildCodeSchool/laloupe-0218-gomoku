@@ -20,14 +20,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './services/auth.service';
 import { StatsService } from './services/stats.service';
 
-var config = {
-  apiKey: "AIzaSyBPcNBKJr3PtrgE92Txxe3woaEc75CpsNI",
-  authDomain: "gomoku-projet-2.firebaseapp.com",
-  databaseURL: "https://gomoku-projet-2.firebaseio.com",
-  projectId: "gomoku-projet-2",
-  storageBucket: "gomoku-projet-2.appspot.com",
-  messagingSenderId: "1001534234475"
-}
+const config = {
+  apiKey: 'AIzaSyBPcNBKJr3PtrgE92Txxe3woaEc75CpsNI',
+  authDomain: 'gomoku-projet-2.firebaseapp.com',
+  databaseURL: 'https://gomoku-projet-2.firebaseio.com',
+  projectId: 'gomoku-projet-2',
+  storageBucket: 'gomoku-projet-2.appspot.com',
+  messagingSenderId: '1001534234475'
+};
 
 @NgModule({
   declarations: [
@@ -43,7 +43,7 @@ var config = {
     BrowserModule,
     AngularFontAwesomeModule,
     AngularFireModule.initializeApp(config),
-    //AngularFireModule.initializeApp(environment.firebase),
+    // AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
 /*     AngularFireDatabase,

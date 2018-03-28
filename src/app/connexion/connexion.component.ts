@@ -23,6 +23,6 @@ export class ConnexionComponent implements OnInit {
       .catch(error => {
         this.socialError = error;
         console.log('Error while signing in with Google: ', error.message);
-      });;
+      });
   }
 }
