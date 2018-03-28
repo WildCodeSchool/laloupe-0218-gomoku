@@ -5,9 +5,9 @@ repo="$(cut -d'/' -f2 <<< ${TRAVIS_REPO_SLUG})"
 
 if [ -z "${TRAVIS_PULL_REQUEST}" -o "${TRAVIS_PULL_REQUEST}" = "false" ]; then
   npm run build -- --base-href "https://${owner}.github.io/${repo}/" -dop false
-  angular-cli-ghpages
+  angular-cli-ghpages --repo=https://GH_TOKEN@github.com/${TRAVIS_REPO_SLUG}.git --name="Travis bro" --email=travis@wildcodeschool.fr
 else
   npm run build -- --base-href "https://${owner}.github.io/${repo}/pr/${TRAVIS_PULL_REQUEST}/" -op "./dist/pr/${TRAVIS_PULL_REQUEST}" -dop false
-  angular-cli-ghpages
+  angular-cli-ghpages --repo=https://GH_TOKEN@github.com/${TRAVIS_REPO_SLUG}.git --name="Travis bro" --email=travis@wildcodeschool.fr
   npm run lh --score=70 https://${owner}.github.io/${repo}/pr/${TRAVIS_PULL_REQUEST}/
 fi
