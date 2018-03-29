@@ -1,7 +1,4 @@
-@media screen and (min-width:500px) and (max-width:769px) {
-  .container-fluid {
-    height: 510px;
-  }
+@media screen and (width:768px) {
   .input-group-text,
   .ifop {
     height: 50px;
@@ -110,9 +107,6 @@
 }
 
 @media screen and (width:1024px) {
-  .container-fluid {
-    height: 510px;
-  }
   .input-group-text,
   .ifop {
     height: 50px;
@@ -217,5 +211,119 @@
   .white-stone-4 {
     margin-top: -500px;
     margin-left: 800px;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .container-fluid {
+    height: 100vh;
+  }
+  .h-50vh {
+    height: 50vh;
+  }
+  .input-group-text {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+  }
+  .guest-icon {
+    display: block;
+    margin: 0 auto;
+    width: 25px;
+    height: auto;
+  }
+  .margin-top-2vh {
+    margin-top: 2vh;
+  }
+  .margin-top-15vh {
+    margin-top: 15vh;
+  }
+  .account-auth {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+  }
+  #twitter-auth {
+    background: #31ADEF;
+  }
+  #facebook-auth {
+    background: #315C98;
+  }
+  .account-auth img {
+    width: 100%;
+    height: auto;
+  }
+  #btn-login {
+    border-radius: 25px;
+  }
+  #guest-input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: transparent;
+  }
+  #guest-input:focus {
+    background: transparent;
+    border-color: #1e7e34;
+    box-shadow: 0 0 0 rgba(126, 239, 104, 0.6);
+    outline: 0 none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  /*--------------STONE PLACEMENT ----------------------------------------------------*/
+  /*----------------------------------------------------------------------------------*/
+  .stone-container {
+    width: 100%;
+    height: 100vh;
+    margin-top: -100vh;
+  }
+  .landing-stone {
+    position: absolute;
+    z-index: 50;
+  }
+  img {
+    display: block;
+    width: 60px;
+    height: auto;
+  }
+  /*Balck-stone--------------------*/
+  .black-stone-1 {
+    margin-top: 85vh;
+    margin-left: -1vw;
+  }
+  .black-stone-2 {
+    margin-top: 70vh;
+    margin-left: 12vw;
+  }
+  .black-stone-3 {
+    margin-top: 85vh;
+    margin-left: 30vw;
+  }
+  .black-stone-4 {
+    margin-top: 14vh;
+    margin-left: 92vw;
+  }
+  .black-stone-5 {
+    margin-top: -1vh;
+    margin-left: 96vw;
+  }
+  /*White stone---------------------*/
+  .white-stone-1 {
+    margin-top: 90vh;
+    margin-left: 15vw;
+  }
+  .white-stone-2 {
+    margin-top: 70vh;
+    margin-left: 25vw;
+  }
+  .white-stone-3 {
+    margin-top: 20vh;
+    margin-left: 80vw;
+  }
+  .white-stone-4 {
+    margin-top: 3vh;
+    margin-left: 82vw;
   }
 }
