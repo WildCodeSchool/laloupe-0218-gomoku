@@ -286,7 +286,7 @@
     position: absolute;
     z-index: 50;
   }
-  img {
+  .landing-stone img {
     display: block;
     width: 60px;
     height: auto;

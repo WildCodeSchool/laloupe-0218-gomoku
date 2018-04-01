@@ -415,8 +415,6 @@
   .toggle {
     margin: 4px;
     display: inline-block;
-  }
-  .toggle {
     position: relative;
     height: 140px;
     width: 200px;
