@@ -107,6 +107,9 @@
 }
 
 @media screen and (width:1024px) {
+  .container-fluid {
+    height: 100vh;
+  }
   .input-group-text,
   .ifop {
     height: 50px;
