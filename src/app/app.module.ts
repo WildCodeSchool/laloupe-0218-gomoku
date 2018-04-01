@@ -18,16 +18,6 @@ import { ProfilComponent } from './profil/profil.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './services/auth.service';
-import { StatsService } from './services/stats.service';
-
-const config = {
-  apiKey: 'AIzaSyBPcNBKJr3PtrgE92Txxe3woaEc75CpsNI',
-  authDomain: 'gomoku-projet-2.firebaseapp.com',
-  databaseURL: 'https://gomoku-projet-2.firebaseio.com',
-  projectId: 'gomoku-projet-2',
-  storageBucket: 'gomoku-projet-2.appspot.com',
-  messagingSenderId: '1001534234475'
-};
 
 @NgModule({
   declarations: [
@@ -37,19 +27,17 @@ const config = {
     LandingPageComponent,
     GameComponent,
     FooterComponent,
-    ProfilComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
-    AngularFireModule.initializeApp(config),
-    // AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-/*     AngularFireDatabase,
- */    AppRoutingModule,
+    AppRoutingModule,
   ],
-  providers: [AuthService, StatsService],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

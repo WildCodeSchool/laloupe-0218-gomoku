@@ -1,12 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+@import url('https://fonts.googleapis.com/css?family=Baloo');
+@font-face {
+  font-family: "Moyko.ttf";
+  src: url(assets/fonts/Moyko.ttf);
+}
+
 @media screen and (width:768px) {
-  @font-face {
-    font-family: "Moyko.ttf";
-    src: url(assets/fonts/Moyko.ttf);
-  }
-  @font-face {
-    font-family: "Beliday.ttf";
-    src: url(assets/fonts/Beliday.ttf);
-  }
   .navbar {
     width: 100%;
     height: 70px;
@@ -14,6 +13,7 @@
   }
   .navbar a {
     color: white;
+    cursor: pointer;
   }
   .moyko {
     font-size: 3em;
@@ -21,6 +21,12 @@
     font-family: "Moyko.ttf", sans-serif;
     text-shadow: -2px 3px 8px rgba(0, 0, 0, 0.79);
     color: white;
+  }
+  .oxygen {
+    font-family: 'Oxygen', sans-serif;
+  }
+  .baloo {
+    font-family: 'Baloo', cursive, sans-serif;
   }
   button {
     margin-top: 60px;
@@ -85,20 +91,12 @@
     font-size: 2em;
     height: 100px;
     line-height: 50px;
-    font-family: "Moyko.ttf", sans-serif;
+    font-family: 'Baloo', cursive, sans-serif;
     text-shadow: -2px 3px 8px rgba(150, 150, 150, 0.79);
   }
 }
 
 @media screen and (width:1024px) {
-  @font-face {
-    font-family: "Moyko.ttf";
-    src: url(assets/fonts/Moyko.ttf);
-  }
-  @font-face {
-    font-family: "Beliday.ttf";
-    src: url(assets/fonts/Beliday.ttf);
-  }
   .navbar {
     width: 100%;
     height: 70px;
@@ -106,6 +104,7 @@
   }
   .navbar a {
     color: white;
+    cursor: pointer;
   }
   .moyko {
     font-size: 3em;
@@ -113,6 +112,12 @@
     font-family: "Moyko.ttf", sans-serif;
     text-shadow: -2px 3px 8px rgba(0, 0, 0, 0.79);
     color: white;
+  }
+  .oxygen {
+    font-family: 'Oxygen', sans-serif;
+  }
+  .baloo {
+    font-family: 'Baloo', cursive, sans-serif;
   }
   button {
     margin-top: 60px;
@@ -190,16 +195,12 @@
     font-size: 2.5em;
     height: 150px;
     line-height: 75px;
-    font-family: "Moyko.ttf", sans-serif;
+    font-family: 'Baloo', cursive, sans-serif;
     text-shadow: -2px 3px 8px rgba(150, 150, 150, 0.79);
   }
 }
 
 @media screen and (min-width:1200px) {
-  @font-face {
-    font-family: "Moyko.ttf";
-    src: url(assets/fonts/Moyko.ttf);
-  }
   .navbar {
     width: 100%;
     height: 70px;
@@ -207,6 +208,7 @@
   }
   .navbar a {
     color: white;
+    cursor: pointer;
   }
   .moyko {
     font-size: 3em;
@@ -214,6 +216,12 @@
     font-family: "Moyko.ttf", sans-serif;
     text-shadow: -2px 3px 8px rgba(0, 0, 0, 0.79);
     color: white;
+  }
+  .oxygen {
+    font-family: 'Oxygen', sans-serif;
+  }
+  .baloo {
+    font-family: 'Baloo', cursive, sans-serif;
   }
   button {
     margin-top: 60px;
@@ -262,7 +270,7 @@
     font-size: 2.5em;
     height: 150px;
     line-height: 75px;
-    font-family: "Moyko.ttf", sans-serif;
+    font-family: 'Baloo', cursive, sans-serif;
     text-shadow: -2px 3px 8px rgba(150, 150, 150, 0.79);
   }
   .chatbox {

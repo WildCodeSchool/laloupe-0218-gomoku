@@ -8,21 +8,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./connexion.component.css']
 })
 export class ConnexionComponent implements OnInit {
-  error: any;
-  socialError: any;
 
-  constructor(public authService: AuthService, public router: Router) { }
+  title = 'GOMOKU';
+
+  constructor(
+    public authService: AuthService,
+    public router: Router
+  ) { }
 
   ngOnInit() {
   }
   loginGoogle() {
-    this.authService.googleLogin()
-      .then(() => {
-        this.router.navigate(['/game']);
-      })
-      .catch(error => {
-        this.socialError = error;
-        console.log('Error while signing in with Google: ', error.message);
-      });
+    this.authService.loginWithGoogle();
   }
 }
