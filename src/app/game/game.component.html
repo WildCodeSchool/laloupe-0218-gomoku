@@ -14,6 +14,18 @@
     </div>
   </nav>
   <div class="row margin-0 margin-top">
+    <div class="col-md-5 col-lg-3">
+      <div class="profil">
+        <div *ngIf="authService.user | async as user" class="padding-user-img">
+          <div class="shine">
+            <img class="vertical-align" src="{{user.photoURL}}" alt="img-profil-user">
+          </div>
+        </div>
+        <p *ngIf="authService.user | async as user" class="text-center">WELCOME {{user.displayName}}
+        </p>
+      </div>
+      <div class="chatbox"></div>
+    </div>
     <div class="col-md-7 col-lg-6">
       <div class="board">
         <table>
@@ -396,24 +408,32 @@
               <td></td>
               <td></td>
             </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
           </tbody>
         </table>
       </div>
     </div>
-    <div class="col-md-5 col-lg-4">
-      <div class="profil">
-        <div *ngIf="authService.user | async as user" class="padding-user-img">
-          <img class="vertical-align" [src]="user.photoURL" alt="img-profil-user">
-        </div>
-        <p *ngIf="authService.user | async as user" class="text-center">WELCOME
-          <br>{{user.displayName}}</p>
-      </div>
-      <div class="chatbox"></div>
-    </div>
-    <div class="col-lg-2">
-      <div class="addon">
-      </div>
-    </div>
+    <div class="col-lg-3"></div>
   </div>
 </div>
 <!-- -----------------------Modal---------------------------------------------- -->

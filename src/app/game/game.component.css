@@ -251,23 +251,60 @@
   }
   .profil {
     height: 150px;
-    border: 3px solid #999999;
-    border-bottom: none;
     overflow: hidden;
     background: white;
     margin-top: 3vh;
   }
   .profil img {
     height: 100px;
+    border-radius: 50%;
   }
   .padding-user-img {
     padding: 25px;
     overflow: hidden;
     float: left;
   }
+  .shine {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  .shine::before {
+    position: absolute;
+    top: 0;
+    left: -75%;
+    z-index: 2;
+    display: block;
+    content: '';
+    width: 50%;
+    height: 100%;
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+    -webkit-transform: skewX(-25deg);
+    transform: skewX(-25deg);
+  }
+  .shine:hover::before {
+    -webkit-animation: shine .75s;
+    animation: shine .75s;
+  }
+  @-webkit-keyframes shine {
+    100% {
+      left: 125%;
+    }
+  }
+  @keyframes shine {
+    100% {
+      left: 125%;
+    }
+  }
   .profil p {
     font-weight: bold;
-    font-size: 2.5em;
+    font-size: 1em;
     height: 150px;
     line-height: 75px;
     font-family: 'Baloo', cursive, sans-serif;
