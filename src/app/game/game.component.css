@@ -80,6 +80,7 @@
   }
   .profil img {
     height: 80px;
+    border-radius: 50%;
   }
   .padding-user-img {
     padding: 10px;
@@ -184,6 +185,7 @@
   }
   .profil img {
     height: 100px;
+    border-radius: 50%;
   }
   .padding-user-img {
     padding: 25px;
@@ -259,6 +261,7 @@
   }
   .profil img {
     height: 100px;
+    border-radius: 50%;
   }
   .padding-user-img {
     padding: 25px;
