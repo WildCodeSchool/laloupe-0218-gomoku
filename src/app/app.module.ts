@@ -2,8 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireStorageModule } from 'angularfire2/storage';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 
@@ -14,7 +13,8 @@ import { FooterComponent } from './footer/footer.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { GameComponent } from './game/game.component';
 import { ProfilComponent } from './profil/profil.component';
-
+/* import { MatchmakingComponent } from './matchmaking/matchmaking.component';
+ */
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './services/auth.service';
@@ -27,15 +27,16 @@ import { AuthService } from './services/auth.service';
     LandingPageComponent,
     GameComponent,
     FooterComponent,
-    ProfilComponent
-  ],
+    ProfilComponent,
+/*     MatchmakingComponent
+ */  ],
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFireDatabaseModule,
     AppRoutingModule,
+    AngularFirestoreModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
