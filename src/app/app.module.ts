@@ -13,8 +13,6 @@ import { FooterComponent } from './footer/footer.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { GameComponent } from './game/game.component';
 import { ProfilComponent } from './profil/profil.component';
-/* import { MatchmakingComponent } from './matchmaking/matchmaking.component';
- */
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './services/auth.service';
@@ -28,8 +26,7 @@ import { AuthService } from './services/auth.service';
     GameComponent,
     FooterComponent,
     ProfilComponent,
-/*     MatchmakingComponent
- */  ],
+  ],
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
