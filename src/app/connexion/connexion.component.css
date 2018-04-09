@@ -351,7 +351,7 @@
   .toggle-mail {
     margin-top: 20px;
     margin-bottom: -6vh;
-    width: 600px;
+    width: 100%;
   }
   .toggle .button {
     -webkit-filter: blur(1px);
@@ -366,7 +366,7 @@
     position: absolute;
   }
   .toggle-mail .button-mail {
-    width: 600px;
+    width: 100%;
   }
   .toggle .label {
     transition: color 300ms ease-out;

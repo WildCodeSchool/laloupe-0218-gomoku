@@ -252,7 +252,6 @@
   .profil {
     height: 150px;
     overflow: hidden;
-    background: white;
     margin-top: 3vh;
   }
   .profil img {
@@ -304,17 +303,21 @@
   }
   .profil p {
     font-weight: bold;
-    font-size: 1em;
-    height: 150px;
-    line-height: 75px;
+    font-size: 1.1em;
+    line-height: 40px;
     font-family: 'Baloo', cursive, sans-serif;
     text-shadow: -2px 3px 8px rgba(150, 150, 150, 0.79);
+    margin: 0;
+  }
+  .profil p:first-of-type {
+    margin-top: 30px !important;
+    font-size: 1.5em;
   }
   .chatbox {
     width: 100%;
     height: 350px;
     border: 3px solid #999999;
-    margin: 0 !important;
+    margin-top: 3vh;
     background: white;
   }
   .addon {
@@ -333,5 +336,9 @@
   }
   .margin-top {
     margin-top: 2px;
+  }
+  .modal-title {
+    width: 100%;
+    text-align: center;
   }
 }

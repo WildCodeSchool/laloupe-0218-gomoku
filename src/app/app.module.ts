@@ -13,7 +13,6 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { GameComponent } from './game/game.component';
-import { ProfilComponent } from './profil/profil.component';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,8 +25,7 @@ import { AuthService } from './services/auth.service';
     ConnexionComponent,
     LandingPageComponent,
     GameComponent,
-    FooterComponent,
-    ProfilComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,

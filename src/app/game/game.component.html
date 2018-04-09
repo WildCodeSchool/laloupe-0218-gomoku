@@ -21,10 +21,9 @@
             <img class="vertical-align" src="{{user.photoURL}}" alt="img-profil-user">
           </div>
         </div>
-        <p *ngIf="authService.user | async as user" class="text-center">WELCOME {{user.displayName}}
-        </p>
+        <p class="text-right">WELCOME</p>
+        <p *ngIf="authService.user | async as user" class="text-right"> {{user.displayName}} </p>
       </div>
-      <div class="chatbox"></div>
     </div>
     <div class="col-md-7 col-lg-6">
       <div class="board">
@@ -433,12 +432,14 @@
         </table>
       </div>
     </div>
-    <div class="col-lg-3"></div>
+    <div class="col-lg-3">
+      <div class="chatbox"></div>
+    </div>
   </div>
 </div>
 <!-- -----------------------Modal---------------------------------------------- -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title baloo" id="exampleModalLongTitle">Rules of the game !</h5>
@@ -447,10 +448,19 @@
         </button>
       </div>
       <div class="modal-body oxygen">
-        It is a board game for two players who take turns in putting black and white stones on the board. Each players' goal is to
-        create an unbroken row of five stones horizontally, vertically, or diagonally.
-        <br>
-        <br> Only exactly five stones in a row win, rows of six or more, called overlines, do not count and the game continues.
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <img src="assets/img/gomoku-rules.png" alt="gomoku">
+            </div>
+            <div class="col-8">
+              It is a board game for two players who take turns in putting black and white stones on the board. Each players' goal is to
+              create an unbroken row of five stones horizontally, vertically, or diagonally.
+              <br>
+              <br> Only exactly five stones in a row win, rows of six or more, called overlines, do not count and the game continues.
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
