@@ -15,6 +15,7 @@ import { GameComponent } from './game/game.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './services/auth.service';
+import { ProfilComponent } from './profil/profil.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { AuthService } from './services/auth.service';
     ConnexionComponent,
     LandingPageComponent,
     GameComponent,
-    FooterComponent,
+    ProfilComponent,
+    FooterComponent
+    
   ],
   imports: [
     BrowserModule,

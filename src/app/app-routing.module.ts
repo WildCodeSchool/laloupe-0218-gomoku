@@ -3,13 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { GameComponent } from './game/game.component';
+import { ProfilComponent } from './profil/profil.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'landing-page', pathMatch: 'full' },
     { path: 'landing-page', component: LandingPageComponent },
     { path: 'connexion', component: ConnexionComponent },
     { path: 'game', component: GameComponent },
-    { path: '**', redirectTo: 'landing-page', pathMatch: 'full' },
+    { path: 'profil', component: ProfilComponent },
+    { path: '**', redirectTo: 'landing-page', pathMatch: 'full' }
 ];
 @NgModule({
     imports: [

@@ -1,0 +1,128 @@
+@media screen and (min-width:500px) and (max-width:769px) {
+  @font-face {
+    font-family: "Moyko.ttf";
+    src: url(assets/fonts/Moyko.ttf);
+  }
+
+.form-style-6 {
+  font-weight: bold;
+  font-size: 2em;
+  height: 150px;
+  line-height: 50px;
+  font-family: "Moyko.ttf";
+  text-shadow: -2px 3px 8px rgba(150, 150, 150, 0.79);
+
+  
+}
+form{
+  border: 1px solid black;
+}
+
+
+.form-style-6 h1 {
+  background: rgb(34, 49, 121);
+  font-size: 140%;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+
+}
+
+.form-style-6 p {
+  text-align: center;
+  padding-top: 5%;
+}
+.navbar {
+  height: 70px;
+  background-image: url(assets/img/tweed.png);
+}
+.navbar a {
+  color: white;
+}
+.moyko {
+  font-size: 3em;
+  font-weight: 700;
+  font-family: "Moyko.ttf";
+  text-shadow: -2px 3px 8px rgba(0, 0, 0, 0.79);
+  color: white;
+}
+
+.navbar {
+  width: 100%;
+}
+.padding-0{
+  padding: 0 !important;
+}
+.progress{
+  border: 1px solid black;
+  width: 37.1%;
+  height: 25%;
+
+
+}
+.row{
+  margin-left: 0;
+  margin-right: 0;
+}
+.gamecount{
+  width: 30%;
+
+}
+
+.gamecount h3 {
+   
+  background: rgb(34, 49, 121);
+  font-size: 140%;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  font-family: "Moyko.ttf";
+}
+
+.gamecount p{
+  margin: auto;
+  width: 15%;
+  text-align: center;
+  border: 3px solid black;
+  border-radius: 100%;
+  margin-bottom: 3%;
+}
+
+
+.avatar img{
+  width: 45%;
+  margin-left: 30%;
+}
+.dropdown{
+  margin-left: 20%;
+}
+.modal-header{
+  background-image: url(assets/img/bg-light.png);
+  
+}
+.modal-title{
+  color: black;
+  font-weight: bold;
+  font-size: 3.5em;
+  height: 50px;
+  line-height: 50px;
+  font-family: "Moyko.ttf";
+  text-shadow: -2px 3px 8px rgba(150, 150, 150, 0.79);
+}
+
+.pieces{
+  width: 25%;
+  float: left;
+}
+
+.modal-body{
+  background-image: url(assets/img/tweed.png);
+  
+}
+.modal-dialog{
+  max-width: 580px;
+}
+}
+
+@media screen and (width:1024px) {
+}
