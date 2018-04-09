@@ -1,7 +1,30 @@
-@media screen and (min-width:500px) and (max-width:769px) {
-  .container-fluid {
-    height: 510px;
-  }
+.oxygen {
+  font-family: 'Oxygen', sans-serif;
+}
+
+.lined {
+  width: 10vw;
+  height: 10px;
+  border-bottom: 1px solid rgb(197, 192, 192);
+}
+
+.margin-top-2vh {
+  margin-top: 2vh;
+}
+
+.margin-top-6vh {
+  margin-top: 6vh;
+}
+
+.margin-top-10vh {
+  margin-top: 10vh;
+}
+
+.margin-top-6vh .col-2 {
+  color: rgb(197, 192, 192);
+}
+
+@media screen and (width:768px) {
   .input-group-text,
   .ifop {
     height: 50px;
@@ -21,24 +44,64 @@
   .input-group-lg:first-child {
     margin-top: 0;
   }
-  .margin-top-50 {
-    margin-top: 100px;
+  .toggle {
+    margin: 4px;
+    display: inline-block;
+    position: relative;
+    height: 140px;
+    width: 200px;
   }
-  .account-auth {
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    border: none;
+  .toggle .button {
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    filter: blur(1px);
+    transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 96.32px;
+    display: block;
+    height: 56.32px;
+    width: 196.32px;
+    position: absolute;
   }
-  #twitter-auth {
-    background: #31ADEF;
-  }
-  #facebook-auth {
-    background: #315C98;
-  }
-  .account-auth img {
+  .toggle .label {
+    transition: color 300ms ease-out;
+    text-shadow: 1px 1px 3px #ccd0d4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px #fff;
+    line-height: 58px;
+    text-align: center;
+    position: absolute;
+    font-weight: 700;
+    font-size: 15px;
+    display: block;
+    opacity: 0.9;
+    height: 100%;
     width: 100%;
-    height: auto;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: 'Oxygen', sans-serif;
+  }
+  .toggle input {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+  .toggle input:active~.button {
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
+  }
+  .toggle input:active~.label {
+    font-size: 15px;
+    color: rgba(0, 255, 255, 0.4);
+    line-height: 58px;
+  }
+  .toggle input:checked~.button {
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.6);
+  }
+  .toggle input:checked~.label {
+    font-size: 15px;
+    color: rgba(0, 255, 255, 0.6);
   }
   #btn-login {
     border-radius: 25px;
@@ -111,7 +174,7 @@
 
 @media screen and (width:1024px) {
   .container-fluid {
-    height: 510px;
+    height: 100vh;
   }
   .input-group-text,
   .ifop {
@@ -132,24 +195,64 @@
   .input-group-lg:first-child {
     margin-top: 0;
   }
-  .margin-top-50 {
-    margin-top: 100px;
+  .toggle {
+    margin: 4px;
+    display: inline-block;
+    position: relative;
+    height: 140px;
+    width: 200px;
   }
-  .account-auth {
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    border: none;
+  .toggle .button {
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    filter: blur(1px);
+    transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 96.32px;
+    display: block;
+    height: 56.32px;
+    width: 196.32px;
+    position: absolute;
   }
-  #twitter-auth {
-    background: #31ADEF;
-  }
-  #facebook-auth {
-    background: #315C98;
-  }
-  .account-auth img {
+  .toggle .label {
+    transition: color 300ms ease-out;
+    text-shadow: 1px 1px 3px #ccd0d4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px #fff;
+    line-height: 58px;
+    text-align: center;
+    position: absolute;
+    font-weight: 700;
+    font-size: 15px;
+    display: block;
+    opacity: 0.9;
+    height: 100%;
     width: 100%;
-    height: auto;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: 'Oxygen', sans-serif;
+  }
+  .toggle input {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+  .toggle input:active~.button {
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
+  }
+  .toggle input:active~.label {
+    font-size: 15px;
+    color: rgba(0, 255, 255, 0.4);
+    line-height: 58px;
+  }
+  .toggle input:checked~.button {
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.6);
+  }
+  .toggle input:checked~.label {
+    font-size: 15px;
+    color: rgba(0, 255, 255, 0.6);
   }
   #btn-login {
     border-radius: 25px;
@@ -217,5 +320,156 @@
   .white-stone-4 {
     margin-top: -500px;
     margin-left: 800px;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .container-fluid {
+    height: 100vh;
+  }
+  .h-50vh {
+    height: 50vh;
+  }
+  .input-group-text {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+  }
+  .guest-icon {
+    display: block;
+    margin: 0 auto;
+    width: 25px;
+    height: auto;
+  }
+  .toggle {
+    margin: 4px;
+    display: inline-block;
+    position: relative;
+    height: 140px;
+    width: 200px;
+  }
+  .toggle .button {
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    filter: blur(1px);
+    transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 96.32px;
+    display: block;
+    height: 56.32px;
+    width: 196.32px;
+    position: absolute;
+  }
+  .toggle .label {
+    transition: color 300ms ease-out;
+    text-shadow: 1px 1px 3px #ccd0d4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px #fff;
+    line-height: 58px;
+    text-align: center;
+    position: absolute;
+    font-weight: 700;
+    font-size: 15px;
+    display: block;
+    opacity: 0.9;
+    height: 100%;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: 'Oxygen', sans-serif;
+  }
+  .toggle input {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+  .toggle input:active~.button {
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
+  }
+  .toggle input:active~.label {
+    font-size: 15px;
+    color: rgba(0, 255, 255, 0.4);
+    line-height: 58px;
+  }
+  .toggle input:checked~.button {
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.6);
+  }
+  .toggle input:checked~.label {
+    font-size: 15px;
+    color: rgba(0, 255, 255, 0.6);
+  }
+  #btn-login {
+    border-radius: 25px;
+  }
+  #guest-input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: transparent;
+  }
+  #guest-input:focus {
+    background: transparent;
+    border-color: #1e7e34;
+    box-shadow: 0 0 0 rgba(126, 239, 104, 0.6);
+    outline: 0 none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  /*--------------STONE PLACEMENT ----------------------------------------------------*/
+  /*----------------------------------------------------------------------------------*/
+  .stone-container {
+    width: 100%;
+    height: 100vh;
+    margin-top: -100vh;
+  }
+  .landing-stone {
+    position: absolute;
+    z-index: 50;
+  }
+  .landing-stone img {
+    display: block;
+    width: 60px;
+    height: auto;
+  }
+  /*Balck-stone--------------------*/
+  .black-stone-1 {
+    margin-top: 85vh;
+    margin-left: -1vw;
+  }
+  .black-stone-2 {
+    margin-top: 70vh;
+    margin-left: 12vw;
+  }
+  .black-stone-3 {
+    margin-top: 85vh;
+    margin-left: 30vw;
+  }
+  .black-stone-4 {
+    margin-top: 14vh;
+    margin-left: 92vw;
+  }
+  .black-stone-5 {
+    margin-top: -1vh;
+    margin-left: 96vw;
+  }
+  /*White stone---------------------*/
+  .white-stone-1 {
+    margin-top: 90vh;
+    margin-left: 15vw;
+  }
+  .white-stone-2 {
+    margin-top: 70vh;
+    margin-left: 25vw;
+  }
+  .white-stone-3 {
+    margin-top: 20vh;
+    margin-left: 80vw;
+  }
+  .white-stone-4 {
+    margin-top: 3vh;
+    margin-left: 82vw;
   }
 }

@@ -77,3 +77,43 @@
     padding-left: 0 !important;
   }
 }
+
+@media screen and (min-width:1200px) {
+  .fixed-bottom {
+    background-image: url(assets/img/tweed.png);
+    height: 70px;
+  }
+  .nlj {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    text-align: left;
+  }
+  .rating {
+    float: left;
+    direction: rtl;
+  }
+  .rating .stars {
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+    transition: color .4s;
+  }
+  .rating a:hover,
+  .rating a:focus,
+  .rating a:hover~a,
+  .rating a:focus~a {
+    color: orange;
+    cursor: pointer;
+  }
+  .copyright {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8em;
+    height: 100%;
+    line-height: 120px;
+  }
+  .col-7 {
+    padding-left: 0 !important;
+  }
+}

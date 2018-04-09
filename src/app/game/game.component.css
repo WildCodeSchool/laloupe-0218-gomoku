@@ -1,12 +1,11 @@
-@media screen and (min-width:500px) and (max-width:769px) {
-  @font-face {
-    font-family: "Moyko.ttf";
-    src: url(assets/fonts/Moyko.ttf);
-  }
-  @font-face {
-    font-family: "Beliday.ttf";
-    src: url(assets/fonts/Beliday.ttf);
-  }
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+@import url('https://fonts.googleapis.com/css?family=Baloo');
+@font-face {
+  font-family: "Moyko.ttf";
+  src: url(assets/fonts/Moyko.ttf);
+}
+
+@media screen and (width:768px) {
   .navbar {
     width: 100%;
     height: 70px;
@@ -14,6 +13,7 @@
   }
   .navbar a {
     color: white;
+    cursor: pointer;
   }
   .moyko {
     font-size: 3em;
@@ -21,6 +21,12 @@
     font-family: "Moyko.ttf", sans-serif;
     text-shadow: -2px 3px 8px rgba(0, 0, 0, 0.79);
     color: white;
+  }
+  .oxygen {
+    font-family: 'Oxygen', sans-serif;
+  }
+  .baloo {
+    font-family: 'Baloo', cursive, sans-serif;
   }
   button {
     margin-top: 60px;
@@ -74,6 +80,7 @@
   }
   .profil img {
     height: 80px;
+    border-radius: 50%;
   }
   .padding-user-img {
     padding: 10px;
@@ -85,20 +92,12 @@
     font-size: 2em;
     height: 100px;
     line-height: 50px;
-    font-family: "Moyko.ttf", sans-serif;
+    font-family: 'Baloo', cursive, sans-serif;
     text-shadow: -2px 3px 8px rgba(150, 150, 150, 0.79);
   }
 }
 
 @media screen and (width:1024px) {
-  @font-face {
-    font-family: "Moyko.ttf";
-    src: url(assets/fonts/Moyko.ttf);
-  }
-  @font-face {
-    font-family: "Beliday.ttf";
-    src: url(assets/fonts/Beliday.ttf);
-  }
   .navbar {
     width: 100%;
     height: 70px;
@@ -106,6 +105,7 @@
   }
   .navbar a {
     color: white;
+    cursor: pointer;
   }
   .moyko {
     font-size: 3em;
@@ -113,6 +113,12 @@
     font-family: "Moyko.ttf", sans-serif;
     text-shadow: -2px 3px 8px rgba(0, 0, 0, 0.79);
     color: white;
+  }
+  .oxygen {
+    font-family: 'Oxygen', sans-serif;
+  }
+  .baloo {
+    font-family: 'Baloo', cursive, sans-serif;
   }
   button {
     margin-top: 60px;
@@ -179,6 +185,7 @@
   }
   .profil img {
     height: 100px;
+    border-radius: 50%;
   }
   .padding-user-img {
     padding: 25px;
@@ -190,7 +197,107 @@
     font-size: 2.5em;
     height: 150px;
     line-height: 75px;
-    font-family: "Moyko.ttf", sans-serif;
+    font-family: 'Baloo', cursive, sans-serif;
     text-shadow: -2px 3px 8px rgba(150, 150, 150, 0.79);
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .navbar {
+    width: 100%;
+    height: 70px;
+    background-image: url(assets/img/tweed.png);
+  }
+  .navbar a {
+    color: white;
+    cursor: pointer;
+  }
+  .moyko {
+    font-size: 3em;
+    font-weight: 700;
+    font-family: "Moyko.ttf", sans-serif;
+    text-shadow: -2px 3px 8px rgba(0, 0, 0, 0.79);
+    color: white;
+  }
+  .oxygen {
+    font-family: 'Oxygen', sans-serif;
+  }
+  .baloo {
+    font-family: 'Baloo', cursive, sans-serif;
+  }
+  button {
+    margin-top: 60px;
+  }
+  .col-lg-6 {
+    height: 82vh;
+  }
+  .border {
+    border: 3px solid black
+  }
+  .board {
+    width: 600px;
+    height: 600px;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    background-image: url(assets/img/bg-board.jpg);
+    overflow: hidden;
+    margin-top: 3vh;
+  }
+  table,
+  tbody {
+    width: 100%;
+    height: 100%;
+  }
+  td {
+    border: 1px solid #ada7a7;
+  }
+  .profil {
+    height: 150px;
+    border: 3px solid #999999;
+    border-bottom: none;
+    overflow: hidden;
+    background: white;
+    margin-top: 3vh;
+  }
+  .profil img {
+    height: 100px;
+    border-radius: 50%;
+  }
+  .padding-user-img {
+    padding: 25px;
+    overflow: hidden;
+    float: left;
+  }
+  .profil p {
+    font-weight: bold;
+    font-size: 2.5em;
+    height: 150px;
+    line-height: 75px;
+    font-family: 'Baloo', cursive, sans-serif;
+    text-shadow: -2px 3px 8px rgba(150, 150, 150, 0.79);
+  }
+  .chatbox {
+    width: 100%;
+    height: 350px;
+    border: 3px solid #999999;
+    margin: 0 !important;
+    background: white;
+  }
+  .addon {
+    width: 100%;
+    height: 600px;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    background: white;
+    margin-top: 3vh;
+  }
+  .padding-0 {
+    padding: 0;
+  }
+  .margin-0 {
+    margin: 0;
+  }
+  .margin-top {
+    margin-top: 2px;
   }
 }

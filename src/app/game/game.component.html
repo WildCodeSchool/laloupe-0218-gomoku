@@ -7,9 +7,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link" data-toggle="modal" data-target="#exampleModalCenter">Rules</a>
-        <a class="nav-item nav-link" href="#">Profile</a>
-        <a class="nav-item nav-link" href="#">Logout</a>
+        <a class="nav-item nav-link oxygen" data-toggle="modal" data-target="#exampleModalCenter">Rules</a>
+        <a class="nav-item nav-link oxygen">Profile</a>
+        <a class="nav-item nav-link oxygen" (click)="authService.logout()">Logout</a>
       </div>
     </div>
   </nav>
@@ -396,17 +396,38 @@
               <td></td>
               <td></td>
             </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
           </tbody>
         </table>
       </div>
     </div>
     <div class="col-md-5 col-lg-4">
       <div class="profil">
-        <div class="padding-user-img">
-          <img class="vertical-align" src="assets/img/poutin.png" alt="img-profil-user">
+        <div *ngIf="authService.user | async as user" class="padding-user-img">
+          <img class="vertical-align" src="{{user.photoURL}}" alt="img-profil-user">
         </div>
-        <p class="text-center">WELCOME
-          <br>GRONAZ</p>
+        <p *ngIf="authService.user | async as user" class="text-center">WELCOME
+          <br>{{user.displayName}}</p>
       </div>
       <div class="chatbox"></div>
     </div>
@@ -421,12 +442,12 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Rules of the game !</h5>
+        <h5 class="modal-title baloo" id="exampleModalLongTitle">Rules of the game !</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body oxygen">
         It is a board game for two players who take turns in putting black and white stones on the board. Each players' goal is to
         create an unbroken row of five stones horizontally, vertically, or diagonally.
         <br>
