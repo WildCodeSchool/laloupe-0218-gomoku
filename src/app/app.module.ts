@@ -26,7 +26,6 @@ import { ProfilComponent } from './profil/profil.component';
     GameComponent,
     ProfilComponent,
     FooterComponent
-    
   ],
   imports: [
     BrowserModule,
