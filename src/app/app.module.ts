@@ -23,7 +23,7 @@ import { AuthService } from './services/auth.service';
     ConnexionComponent,
     LandingPageComponent,
     GameComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,11 @@
         </div>
         <input type="text" id="guest-input" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Put your name here">
       </div>
-      <button type="button" id="btn-login" class="btn btn-success btn-lg btn-block margin-top-2vh">Login</button>
+      <div class="toggle toggle-mail">
+        <input type="checkbox" (click)="loginGoogle()">
+        <span class="button button-mail"></span>
+        <span class="label label-mail">Login</span>
+      </div>
       <div class="oxygen row margin-top-6vh">
         <div class="lined col-4 offset-1"></div>
         <div class="col-2">OR</div>
