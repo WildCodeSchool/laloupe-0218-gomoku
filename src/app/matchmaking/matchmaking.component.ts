@@ -1,4 +1,4 @@
-/* import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Router } from '@angular/router';
 
@@ -49,4 +49,3 @@ export class MatchmakingComponent implements OnInit {
     });
   }
 }
- */
