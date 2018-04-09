@@ -265,7 +265,7 @@
   }
   #guest-input:focus {
     background: transparent;
-    border-color: #1e7e34;
+    border-color: #008839;
     box-shadow: 0 0 0 rgba(126, 239, 104, 0.6);
     outline: 0 none;
     border-top: none;
@@ -348,6 +348,11 @@
     height: 140px;
     width: 200px;
   }
+  .toggle-mail {
+    margin-top: 20px;
+    margin-bottom: -6vh;
+    width: 600px;
+  }
   .toggle .button {
     -webkit-filter: blur(1px);
     -moz-filter: blur(1px);
@@ -359,6 +364,9 @@
     height: 56.32px;
     width: 196.32px;
     position: absolute;
+  }
+  .toggle-mail .button-mail {
+    width: 600px;
   }
   .toggle .label {
     transition: color 300ms ease-out;
@@ -372,8 +380,11 @@
     opacity: 0.9;
     height: 100%;
     width: 100%;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(0, 4, 255, 0.4);
     font-family: 'Oxygen', sans-serif;
+  }
+  .toggle-mail .label-mail {
+    color: rgba(16, 255, 116, 0.4);
   }
   .toggle input {
     opacity: 0;
@@ -390,15 +401,21 @@
   }
   .toggle input:active~.label {
     font-size: 15px;
-    color: rgba(0, 255, 255, 0.4);
+    color: rgba(0, 4, 255, 0.6);
     line-height: 58px;
+  }
+  .toggle-mail input:active~.label-mail {
+    color: rgba(21, 255, 0, 0.6);
   }
   .toggle input:checked~.button {
     box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.6);
   }
   .toggle input:checked~.label {
     font-size: 15px;
-    color: rgba(0, 255, 255, 0.6);
+    color: rgba(0, 4, 255, 0.8);
+  }
+  .toggle-mail input:checked~.label-mail {
+    color: rgba(21, 255, 0, 0.8);
   }
   #btn-login {
     border-radius: 25px;
@@ -411,7 +428,7 @@
   }
   #guest-input:focus {
     background: transparent;
-    border-color: #1e7e34;
+    border-color: #008839;
     box-shadow: 0 0 0 rgba(126, 239, 104, 0.6);
     outline: 0 none;
     border-top: none;
