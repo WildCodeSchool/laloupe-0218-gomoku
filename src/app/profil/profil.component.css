@@ -166,6 +166,14 @@
     text-shadow: -2px 3px 8px rgba(150, 150, 150, 0.79);
     margin: 0;
   }
+  .gamecount p {
+    margin: auto;
+    width: 15%;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 100%;
+    margin-bottom: 3%;
+  }
   .profil p:first-of-type {
     margin-top: 30px !important;
     font-size: 1.5em;
@@ -269,6 +277,9 @@
   .rounded {
     border-radius: 60% !important;
   }
+  .pieces {
+    width: 100%;
+  }
   .pieces:hover {
     transform: scale(1.5);
   }
@@ -279,17 +290,6 @@
     text-align: center;
     color: #fff;
     font-family: "Moyko.ttf", sans-serif;
-  }
-  .gamecount p {
-    margin: auto;
-    width: 15%;
-    text-align: center;
-    border: 3px solid black;
-    border-radius: 100%;
-    margin-bottom: 3%;
-  }
-  .pieces {
-    width: 100%;
   }
   .modal-title {
     width: 100%;
