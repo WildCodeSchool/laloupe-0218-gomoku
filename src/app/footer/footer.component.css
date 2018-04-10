@@ -80,11 +80,10 @@
 
 @media screen and (min-width:1200px) {
   .fixed-bottom {
-    background-image: url(assets/img/tweed.png);
     height: 70px;
   }
   .nlj {
-    color: white;
+    color: grey;
     text-decoration: none;
     font-size: 1em;
     text-align: left;
@@ -94,7 +93,7 @@
     direction: rtl;
   }
   .rating .stars {
-    color: white;
+    color: grey;
     text-decoration: none;
     font-size: 2em;
     transition: color .4s;
@@ -107,7 +106,7 @@
     cursor: pointer;
   }
   .copyright {
-    color: white;
+    color: grey;
     text-decoration: none;
     font-size: 0.8em;
     height: 100%;

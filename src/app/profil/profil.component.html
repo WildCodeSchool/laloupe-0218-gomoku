@@ -1,0 +1,182 @@
+<div class="container-fluid padding-0">
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand moyko" href="#">Gomoku</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+      aria-expanded="false" aria-label="Toggle navigation" routerLink="/landing-page">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link oxygen" data-toggle="modal" data-target="#exampleModalCenter">Rules</a>
+        <a class="nav-item nav-link oxygen" routerLink="/profil">Profile</a>
+        <a class="nav-item nav-link oxygen" (click)="authService.logout()">Logout</a>
+      </div>
+    </div>
+  </nav>
+  <div class="row">
+    <div class="col-md-5 col-lg-3">
+      <div class="profil">
+        <div *ngIf="authService.user | async as user" class="padding-user-img">
+          <div class="shine">
+            <img class="vertical-align" src="{{user.photoURL}}" alt="img-profil-user">
+          </div>
+        </div>
+        <p class="text-right">WELCOME</p>
+        <p *ngIf="authService.user | async as user" class="text-right"> {{user.displayName}} </p>
+        <div class="levels">
+          <div class="w-333 baloo">
+            Level 1
+          </div>
+          <div class="w-333 fa fa-long-arrow-right"></div>
+          <div class="w-333 baloo">
+            Level 2
+          </div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+            25%
+          </div>
+        </div>
+        <div class="toggle">
+          <input type="checkbox" routerLink="/game">
+          <span class="button"></span>
+          <span class="label">Back to the game !</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7 col-lg-4 offset-lg-1 h-85vh mg-t-3vh">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="baloo">Choose your stone</h2>
+        </div>
+      </div>
+      <div class="row mg-t-3vh">
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/black_pion.png" alt="black piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/white_pion.png" alt="white piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/blackmetal_pion.png" alt="blackmetal piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/silver_pion.png" alt="silver piece">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/silvermetal_pion.png" alt="silvermetal piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/gold_pion.png" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/green_pion.png" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/applegreen_pion.png" alt="gold piece">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/neon3_pion.png" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/ocean_pion.png" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/red_pion.png" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/neon2_pion.png" alt="gold piece">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/pink_pion.png" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/neon1_pion.png" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/purple_pion.png" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/orange_pion.png" alt="gold piece">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/blue_pion.png" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/deepblue_pion.png" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/yellow_pion.png" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/sun_pion.png" alt="gold piece">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/sunset_pion.png" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/rainbow_pion.png" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/radial_pion.png" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="../assets/img/bloody_pion.png" alt="gold piece">
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 offset-lg-1 gamecount">
+      <div class="games">
+        <h3>played</h3>
+        <p>5</p>
+        <h3>win</h3>
+        <p>5</p>
+        <h3>Draw</h3>
+        <p>5</p>
+        <h3>loose</h3>
+        <p>5</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- -----------------------Modal---------------------------------------------- -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title baloo" id="exampleModalLongTitle">Rules of the game !</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body oxygen">
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <img src="assets/img/gomoku-rules.png" alt="gomoku">
+            </div>
+            <div class="col-8">
+              It is a board game for two players who take turns in putting black and white stones on the board. Each players' goal is to
+              create an unbroken row of five stones horizontally, vertically, or diagonally.
+              <br>
+              <br> Only exactly five stones in a row win, rows of six or more, called overlines, do not count and the game continues.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

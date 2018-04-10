@@ -511,7 +511,7 @@
     opacity: 0.9;
     height: 100%;
     width: 100%;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(0, 0, 0, 0.4);
     font-family: 'Oxygen', sans-serif;
   }
   .toggle input {
