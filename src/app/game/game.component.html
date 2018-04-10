@@ -25,11 +25,14 @@
         <p *ngIf="authService.user | async as user" class="text-right"> {{user.displayName}} </p>
       </div>
     </div>
-    <div class="col-md-7 col-lg-6">
-      <div class="board">
-        <div class="table"></div>
+    <div class="connect4 col-md-6">
+      <div class="line" *ngFor="let line of grid; let x = index">
+          <div class="cell" *ngFor="let cell of line; let y = index" (click)="cellClicked(x,y)" [ngClass]="{'active': turn === 2}">
+              <div class="image-cropper" [ngClass]="getImg(x,y)">
+              </div>
+          </div>
       </div>
-    </div>
+  </div>
     <div class="col-lg-3">
       <div class="chatbox"></div>
     </div>

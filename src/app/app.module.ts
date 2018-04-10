@@ -5,6 +5,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
+import { PlayersService } from './services/players.service';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -15,6 +17,7 @@ import { GameComponent } from './game/game.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './services/auth.service';
+import { GridComponent } from './grid/grid.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { AuthService } from './services/auth.service';
     ConnexionComponent,
     LandingPageComponent,
     GameComponent,
+    GridComponent,
     FooterComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -31,9 +36,10 @@ import { AuthService } from './services/auth.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AppRoutingModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    HttpClientModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService,PlayersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

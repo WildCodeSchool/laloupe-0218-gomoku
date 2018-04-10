@@ -1,0 +1,9 @@
+<div class="connect4 col-md-6">
+    <div class="line" *ngFor="let line of grid">
+        <div class="cell" *ngFor="let cell of line; let i = index" (click)="cellClicked(i)">
+            <div class="image-cropper" *ngIf="cell != 0">
+                <img [src]="getPlayerImg(cell)" class="rounded" />
+            </div>
+        </div>
+    </div>
+</div>
