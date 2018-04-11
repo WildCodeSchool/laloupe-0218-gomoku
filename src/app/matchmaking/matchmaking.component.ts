@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class MatchmakingComponent implements OnInit {
   private authSubscription: Subscription;
-gridLength = 19;
+gridLength = 15;
   constructor(
     private authService: AuthService,
     private db: AngularFirestore,
@@ -58,7 +58,6 @@ gridLength = 19;
       room.gridLength = this.gridLength;
       room.turn = this.authService.user.uid;
       room.players[this.authService.user.uid] = player;
-      console.log(room);
       this.db.collection('rooms')
         .add(JSON.parse(JSON.stringify(room)))
         .then((doc) => {

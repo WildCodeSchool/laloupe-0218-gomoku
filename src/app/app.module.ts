@@ -17,7 +17,6 @@ import { GameComponent } from './game/game.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './services/auth.service';
-import { GridComponent } from './grid/grid.component';
 import { MatchmakingComponent } from './matchmaking/matchmaking.component';
 
 @NgModule({
@@ -27,7 +26,6 @@ import { MatchmakingComponent } from './matchmaking/matchmaking.component';
     ConnexionComponent,
     LandingPageComponent,
     GameComponent,
-    GridComponent,
     FooterComponent,
     MatchmakingComponent
     
