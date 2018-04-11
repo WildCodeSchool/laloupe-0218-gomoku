@@ -6,4 +6,5 @@ export class Room {
   winner: string;
   grid: string[];
   gridLength: number;
+  myPosition: string;
 }
