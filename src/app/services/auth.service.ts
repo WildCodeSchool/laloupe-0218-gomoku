@@ -8,21 +8,30 @@ import 'rxjs/add/operator/switchMap';
 
 @Injectable()
 export class AuthService {
-
-    user: Observable<firebase.User>;
-
+  
+ user: firebase.User;
     constructor(
         public afAuth: AngularFireAuth,
         public router: Router) {
 
-        // Get auth data, then get firestore user document || null
-        this.user = afAuth.authState;
+        this.afAuth.authState.subscribe((user) => {
+            if (user) {
+              this.user = user;
+            } else {
+              this.user = null;
+            }
+          });
     }
+
+    get authState() {
+        return this.afAuth.authState;
+      }
+
     loginWithGoogle() {
         const provider = new firebase.auth.GoogleAuthProvider();
         this.afAuth.auth.signInWithPopup(provider)
             .then(value => {
-                this.router.navigateByUrl('/game');
+                this.router.navigateByUrl('/matchmaking');
             })
             .catch(error => {
                 console.log('Something went wrong: ', error);

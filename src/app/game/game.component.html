@@ -16,18 +16,18 @@
   <div class="row margin-0 margin-top">
     <div class="col-md-5 col-lg-3">
       <div class="profil">
-        <div *ngIf="authService.user | async as user" class="padding-user-img">
+        <div *ngIf="authService.user " class="padding-user-img">
           <div class="shine">
-            <img class="vertical-align" src="{{user.photoURL}}" alt="img-profil-user">
+            <img class="vertical-align" src="{{authService.user.photoURL}}" alt="img-profil-user">
           </div>
         </div>
         <p class="text-right">WELCOME</p>
-        <p *ngIf="authService.user | async as user" class="text-right"> {{user.displayName}} </p>
+        <p *ngIf="authService.user " class="text-right"> {{authService.user.displayName}} </p>
       </div>
     </div>
     <div class="connect4 col-md-6">
       <div class="line" *ngFor="let line of grid; let x = index">
-          <div class="cell" *ngFor="let cell of line; let y = index" (click)="cellClicked(x,y)" [ngClass]="{'active': turn === 2}">
+          <div class="cell" *ngFor="let cell of line; let y = index" (click)="cellClicked(x,y)" [ngClass]="{'active' : room.turn}">
               <div class="image-cropper" [ngClass]="getImg(x,y)">
               </div>
           </div>
