@@ -22,7 +22,13 @@
           </div>
         </div>
         <p class="text-right">WELCOME</p>
-        <p *ngIf="authService.user " class="text-right"> {{authService.user.displayName}} </p>
+        <p *ngIf="authService.user" class="text-right"> {{authService.user.displayName}} </p>
+      </div>
+      <div class="whosturn">
+        <div *ngIf="this.room.turn !== this.authService.user.uid; else opponentturn" class="baloo flash-red">Opponent turn...</div>
+        <ng-template #opponentturn>
+          <div class="baloo flash-green">It's your turn</div>
+        </ng-template>
       </div>
     </div>
     <div class="connect4 col-lg-9">
@@ -54,8 +60,6 @@
             <div class="col-8">
               It is a board game for two players who take turns in putting black and white stones on the board. Each players' goal is to
               create an unbroken row of five stones horizontally, vertically, or diagonally.
-              <br>
-              <br> Only exactly five stones in a row win, rows of six or more, called overlines, do not count and the game continues.
             </div>
           </div>
         </div>
@@ -68,6 +72,7 @@
 
 
 <button class="btn btn-outline-primary mb-1" id="triggerModal" (click)="openVerticallyCentered(content)">Modal vertically centered</button>
+
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h1 class="modal-title youwin baloo">YOU WIN</h1>

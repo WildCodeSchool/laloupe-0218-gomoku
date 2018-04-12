@@ -16,13 +16,13 @@
   <div class="row">
     <div class="col-md-5 col-lg-3">
       <div class="profil">
-        <div *ngIf="authService.user | async as user" class="padding-user-img">
+        <div *ngIf="authService.user" class="padding-user-img">
           <div class="shine">
-            <img class="vertical-align" src="{{user.photoURL}}" alt="img-profil-user">
+            <img class="vertical-align" src="{{authService.user.photoURL}}" alt="img-profil-user">
           </div>
         </div>
         <p class="text-right">WELCOME</p>
-        <p *ngIf="authService.user | async as user" class="text-right"> {{user.displayName}} </p>
+        <p *ngIf="authService.user" class="text-right"> {{authService.user.displayName}} </p>
         <div class="levels">
           <div class="w-333 baloo">
             Level 1
@@ -170,8 +170,6 @@
             <div class="col-8">
               It is a board game for two players who take turns in putting black and white stones on the board. Each players' goal is to
               create an unbroken row of five stones horizontally, vertically, or diagonally.
-              <br>
-              <br> Only exactly five stones in a row win, rows of six or more, called overlines, do not count and the game continues.
             </div>
           </div>
         </div>
