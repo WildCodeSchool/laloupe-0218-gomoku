@@ -8,7 +8,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
-  styleUrls: ['./game.component.css']
+  styleUrls: ['./game.component.css'],
 })
 export class GameComponent implements OnInit {
   grid;
@@ -35,14 +35,14 @@ export class GameComponent implements OnInit {
         this.room = room;
         if (!this.grid) {
           this.grid = [];
-          for (let i = 0; i < this.room.gridLength; i++) {
+          for (let i = 0; i < this.room.gridLength; i = i + 1) {
             this.grid[i] = [];
-            for (let y = 0; y < this.room.gridLength; y++) {
+            for (let y = 0; y < this.room.gridLength; y = y + 1) {
               this.grid[i][y] = 0;
             }
           }
         }
-        for (let player of Object.keys(this.room.players)) {
+        for (const player of Object.keys(this.room.players)) {
           if (player !== this.authService.user.uid) {
             this.opponentId = player;
           }
@@ -81,7 +81,7 @@ export class GameComponent implements OnInit {
   }
 
   cellClicked(x, y): any {
-    if (this.room.turn == this.authService.user.uid) {
+    if (this.room.turn === this.authService.user.uid) {
       // console.log((this.room.gridLength * y) + x);
       if (this.room.players && this.room.turn) {
         this.room.grid[(y * this.room.gridLength) + x] = this.authService.user.uid;
@@ -91,7 +91,7 @@ export class GameComponent implements OnInit {
         this.direction(x, y, 4);
         this.room.turn = this.opponentId;
         this.updateRoom();
-        //this.whenClickedDisable(x,y);
+        // this.whenClickedDisable(x,y);
 
       }
     }
@@ -99,10 +99,10 @@ export class GameComponent implements OnInit {
 
   direction(x, y, direction) {
     let maxLenght = 1;
-    let maxCheck = 5;
+    const maxCheck = 5;
 
 
-    for (let index = 1; index < maxCheck; index++) {
+    for (let index = 1; index < maxCheck; index = index + 1) {
       let xIndex = 0;
       let yIndex = 0;
 
@@ -129,7 +129,7 @@ export class GameComponent implements OnInit {
       }
     }
 
-    for (let index = 1; index < maxCheck; index++) {
+    for (let index = 1; index < maxCheck; index = index + 1) {
       let xIndex = 0;
       let yIndex = 0;
 
@@ -163,36 +163,24 @@ export class GameComponent implements OnInit {
     //   maxLenght = maxLenght + 1;
     //   console.log(maxLenght);
     //   console.log(myPosition);
-    //};
+    // };
   }
   checkMine(x, y) {
     console.log(x, y);
-    let myPosition = (y * this.room.gridLength) + x;
+    const myPosition = (y * this.room.gridLength) + x;
     if (this.room.grid[(myPosition)] === this.authService.user.uid) {
       return true;
-    } else {
-      return false;
-    }
+    } return false;
   }
 
-
-
-  //isWon() {
-
-  // if (maxLenght === 5) {
-  //   console.log('you win');
-  // }
-  // whenClickedDisable(x, y){
-  //   if((this.room.grid[(y * this.room.gridLength) + x] == this.authService.user.uid) || (this.room.grid[(y * this.room.gridLength) + x] != this.authService.user.uid)){
-  //     this.cellClicked(x,y).disabled = true;
-  // }
-  // }
   getImg(x, y) {
-    if (this.room.grid[(y * this.room.gridLength) + x] == "1") {
+    if (this.room.grid[(y * this.room.gridLength) + x] === '1') {
       return 'image-cropper1';
-    } else if (this.room.grid[(y * this.room.gridLength) + x] == this.authService.user.uid) {
+    }
+    if (this.room.grid[(y * this.room.gridLength) + x] === this.authService.user.uid) {
       return 'image-cropper2';
-    } else if (this.room.grid[(y * this.room.gridLength) + x] != this.authService.user.uid) {
+    }
+    if (this.room.grid[(y * this.room.gridLength) + x] !== this.authService.user.uid) {
       return 'image-cropper3';
     }
   }

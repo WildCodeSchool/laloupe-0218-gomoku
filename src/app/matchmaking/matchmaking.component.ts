@@ -1,21 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from './../services/auth.service';
 import { Player } from './../models/player';
 import { Room } from './../models/room';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/take';
-import { Subscription } from 'rxjs/Rx';
+import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-matchmaking',
   templateUrl: './matchmaking.component.html',
-  styleUrls: ['./matchmaking.component.css']
+  styleUrls: ['./matchmaking.component.css'],
 })
 export class MatchmakingComponent implements OnInit {
   private authSubscription: Subscription;
-gridLength = 15;
+  gridLength = 15;
   constructor(
     private authService: AuthService,
     private db: AngularFirestore,
@@ -54,7 +54,9 @@ gridLength = 15;
 
       const room = new Room();
       room.players = {};
-      room.grid = Array.apply(null, Array(this.gridLength*this.gridLength)).map(Number.prototype.valueOf,1);
+      room.grid = Array
+        .apply(null, Array(this.gridLength * this.gridLength))
+        .map(Number.prototype.valueOf, 1);
       room.gridLength = this.gridLength;
       room.turn = this.authService.user.uid;
       room.players[this.authService.user.uid] = player;

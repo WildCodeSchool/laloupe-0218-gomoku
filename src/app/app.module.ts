@@ -29,7 +29,7 @@ import { MatchmakingComponent } from './matchmaking/matchmaking.component';
     GameComponent,
     ProfilComponent,
     FooterComponent,
-    MatchmakingComponent
+    MatchmakingComponent,
 
   ],
   imports: [
@@ -42,6 +42,6 @@ import { MatchmakingComponent } from './matchmaking/matchmaking.component';
     HttpClientModule,
   ],
   providers: [AuthService, PlayersService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
