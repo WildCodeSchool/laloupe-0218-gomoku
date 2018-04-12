@@ -16,13 +16,15 @@
   <div class="row">
     <div class="col-md-5 col-lg-3">
       <div class="profil">
-        <div *ngIf="authService.user | async as user" class="padding-user-img">
+        <div *ngIf="authService.user " class="padding-user-img">
           <div class="shine">
-            <img class="vertical-align" src="{{user.photoURL}}" alt="img-profil-user">
+            <img class="vertical-align" src="{{authService.user.photoURL}}" alt="img-profil-user">
           </div>
         </div>
         <p class="text-right">WELCOME</p>
-        <p *ngIf="authService.user | async as user" class="text-right"> {{user.displayName}} </p>
+        <p *ngIf="authService.user " class="text-right"> {{authService.user.displayName}} </p>
+        <br>
+        <br>
         <div class="levels">
           <div class="w-333 baloo">
             Level 1

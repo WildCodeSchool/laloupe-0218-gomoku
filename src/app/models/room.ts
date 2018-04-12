@@ -7,4 +7,5 @@ export class Room {
   grid: string[];
   gridLength: number;
   myPosition: string;
+  maxlenght: any;
 }

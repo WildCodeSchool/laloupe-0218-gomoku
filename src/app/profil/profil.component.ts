@@ -8,12 +8,12 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./profil.component.css'],
 })
 export class ProfilComponent implements OnInit {
-
+  scores;
   constructor(public router: Router, public authService: AuthService) { }
-
   ngOnInit() {
 
   }
+
   goBack() {
     window.history.back();
   }

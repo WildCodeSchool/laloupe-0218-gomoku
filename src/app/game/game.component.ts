@@ -189,9 +189,6 @@ export class GameComponent implements OnInit {
       return 'image-cropper3';
     }
   }
-  getImage() {
-
-  }
 
   logOut() {
     this.authService.logout();

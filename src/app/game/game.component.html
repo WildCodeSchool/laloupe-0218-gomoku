@@ -28,7 +28,7 @@
     <div class="connect4 col-lg-9">
       <div class="line" *ngFor="let line of grid; let x = index">
         <div class="cell" *ngFor="let cell of line; let y = index" (click)="cellClicked(x,y)" [ngClass]="{'active' : room.turn}">
-          <div class="image-cropper" [ngClass]="getImg(x,y)" ng-style="{ 'background-image': getImage() }">
+          <div class="image-cropper" [ngClass]="getImg(x,y)">
           </div>
         </div>
       </div>
@@ -36,22 +36,23 @@
   </div>
 </div>
 <!-- -----------------------Modal---------------------------------------------- -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title baloo" id="exampleModalLongTitle">Rules of the game !</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+<div class=" modal fade " id="exampleModalCenter " tabindex="-1 " role="dialog " aria-labelledby="exampleModalCenterTitle
+            " aria-hidden="true ">
+  <div class="modal-dialog modal-dialog-centered modal-lg " role="document ">
+    <div class="modal-content ">
+      <div class="modal-header ">
+        <h5 class="modal-title baloo " id="exampleModalLongTitle ">Rules of the game !</h5>
+        <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
+          <span aria-hidden="true ">&times;</span>
         </button>
       </div>
-      <div class="modal-body oxygen">
-        <div class="container">
-          <div class="row">
-            <div class="col-4">
-              <img src="assets/img/gomoku-rules.png" alt="gomoku">
+      <div class="modal-body oxygen ">
+        <div class="container ">
+          <div class="row ">
+            <div class="col-4 ">
+              <img src="assets/img/gomoku-rules.png " alt="gomoku ">
             </div>
-            <div class="col-8">
+            <div class="col-8 ">
               It is a board game for two players who take turns in putting black and white stones on the board. Each players' goal is to
               create an unbroken row of five stones horizontally, vertically, or diagonally.
               <br>
