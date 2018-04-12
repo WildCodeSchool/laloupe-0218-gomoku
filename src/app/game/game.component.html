@@ -25,16 +25,13 @@
         <p *ngIf="authService.user " class="text-right"> {{authService.user.displayName}} </p>
       </div>
     </div>
-    <div class="connect4 col-md-6">
+    <div class="connect4 col-lg-9">
       <div class="line" *ngFor="let line of grid; let x = index">
         <div class="cell" *ngFor="let cell of line; let y = index" (click)="cellClicked(x,y)" [ngClass]="{'active' : room.turn}">
-          <div class="image-cropper" [ngClass]="getImg(x,y)">
+          <div class="image-cropper" [ngClass]="getImg(x,y)" ng-style="{ 'background-image': getImage() }">
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="chatbox"></div>
     </div>
   </div>
 </div>

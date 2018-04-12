@@ -347,48 +347,51 @@
     margin-top: 15px !important;
     margin-left: 0px;
     margin-right: 0px;
-}
-
-.no-margin {
+  }
+  .no-margin {
     margin: 0 !important;
-}
-
-.line {
+  }
+  .line {
     display: block;
     clear: both;
-     height: 40px; 
-}
-
-.connect4 {
+    height: 43px;
+  }
+  .connect4 {
     width: 100%;
     padding: 0;
-    border: white 1px solid;
-}
-
-.cell {
+    margin-top: 3vh;
+    padding-left: 5vw;
+  }
+  .cell {
     position: relative;
     display: inline-block;
-    width: 40px;
-    height: 40px;
-    border: white 1px solid;
+    width: 43px;
+    height: 43px;
+    border: rgb(187, 187, 187) 1px solid;
     padding: 0;
     margin: 0;
-}
-
-.image-cropper1{
-  background: black;
-  height: 40px;
-  width: 40px;
- }
-.image-cropper2{
-  background: grey;
-  height: 40px;
-  width: 40px;
-}
-
-.image-cropper3{
-  background: white;
-  height: 33px;
-  width: 33px;
-} 
+  }
+  .image-cropper1 {
+    background: transparent;
+    height: 40px;
+    width: 40px;
+  }
+  .image-cropper2 {
+    background: black;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    border: rgb(233, 233, 233) 1px solid;
+    margin: 0 auto;
+    margin-top: 3px;
+  }
+  .image-cropper3 {
+    background: white;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    border: rgb(233, 233, 233) 1px solid;
+    margin: 0 auto;
+    margin-top: 3px;
+  }
 }

@@ -35,9 +35,9 @@ export class GameComponent implements OnInit {
         this.room = room;
         if (!this.grid) {
           this.grid = [];
-          for (let i = 0; i < this.room.gridLength; i++) {
+          for (let i = 0; i < this.room.gridLength; i += 1) {
             this.grid[i] = [];
-            for (let y = 0; y < this.room.gridLength; y++) {
+            for (let y = 0; y < this.room.gridLength; y += 1) {
               this.grid[i][y] = 0;
             }
           }
@@ -102,7 +102,7 @@ export class GameComponent implements OnInit {
     let maxCheck = 5;
 
 
-    for (let index = 1; index < maxCheck; index++) {
+    for (let index = 1; index < maxCheck; index += 1) {
       let xIndex = 0;
       let yIndex = 0;
 
@@ -125,11 +125,11 @@ export class GameComponent implements OnInit {
       }
       console.log('maxlength', maxLenght);
       if (maxLenght === 5) {
-        console.log('gagner');
+        alert('gagner');
       }
     }
 
-    for (let index = 1; index < maxCheck; index++) {
+    for (let index = 1; index < maxCheck; index += 1) {
       let xIndex = 0;
       let yIndex = 0;
 
@@ -152,27 +152,18 @@ export class GameComponent implements OnInit {
       }
       console.log('maxlength', maxLenght);
       if (maxLenght === 5) {
-        console.log('gagner');
+        alert('gagner');
       }
     }
-
-
-    // if (this.room.grid[(myPosition - 1)] === this.authService.user.uid) {
-    //   maxLenght = maxLenght + 1;
-    // } else if (this.room.grid[(myPosition + 1)] === this.authService.user.uid) {
-    //   maxLenght = maxLenght + 1;
-    //   console.log(maxLenght);
-    //   console.log(myPosition);
-    //};
   }
+
   checkMine(x, y) {
     console.log(x, y);
     let myPosition = (y * this.room.gridLength) + x;
     if (this.room.grid[(myPosition)] === this.authService.user.uid) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
 
 
@@ -188,7 +179,7 @@ export class GameComponent implements OnInit {
   // }
   // }
   getImg(x, y) {
-    if (this.room.grid[(y * this.room.gridLength) + x] == "1") {
+    if (Number(this.room.grid[(y * this.room.gridLength) + x]) === 1) {
       return 'image-cropper1';
     }
     if (this.room.grid[(y * this.room.gridLength) + x] == this.authService.user.uid) {
@@ -197,6 +188,9 @@ export class GameComponent implements OnInit {
     if (this.room.grid[(y * this.room.gridLength) + x] != this.authService.user.uid) {
       return 'image-cropper3';
     }
+  }
+  getImage() {
+
   }
 
   logOut() {
