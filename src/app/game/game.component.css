@@ -377,21 +377,21 @@
     width: 40px;
   }
   .image-cropper2 {
-    background: black;
-    border-radius: 50%;
+    background: url("assets/img/black_pion.png");
+    background-size: 35px;
     height: 35px;
     width: 35px;
-    border: rgb(233, 233, 233) 1px solid;
     margin: 0 auto;
     margin-top: 3px;
   }
   .image-cropper3 {
-    background: white;
-    border-radius: 50%;
+    background: url("assets/img/white_pion.png");
+    background-size: 35px;
     height: 35px;
     width: 35px;
-    border: rgb(233, 233, 233) 1px solid;
     margin: 0 auto;
     margin-top: 3px;
+    z-index: 999;
+    overflow: visible;
   }
 }
