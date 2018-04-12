@@ -12,6 +12,9 @@ export class ProfilComponent implements OnInit {
   constructor(public router: Router, public authService: AuthService) { }
 
   ngOnInit() {
-  }
 
+  }
+  goBack() {
+    window.history.back();
+  }
 }

@@ -39,6 +39,7 @@
   }
   .navbar a {
     color: white;
+
   }
   .moyko {
     font-size: 3em;
@@ -95,6 +96,7 @@
   }
   .navbar a {
     color: white;
+    cursor: pointer;
   }
   .moyko {
     font-size: 3em;

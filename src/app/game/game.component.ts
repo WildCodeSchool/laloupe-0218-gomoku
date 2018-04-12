@@ -125,7 +125,7 @@ export class GameComponent implements OnInit {
       }
       console.log('maxlength', maxLenght);
       if (maxLenght === 5) {
-        console.log('gagner');
+        alert('GG EZ');
       }
     }
 
@@ -152,7 +152,7 @@ export class GameComponent implements OnInit {
       }
       console.log('maxlength', maxLenght);
       if (maxLenght === 5) {
-        console.log('gagner');
+        alert('GG EZ');
       }
     }
 
