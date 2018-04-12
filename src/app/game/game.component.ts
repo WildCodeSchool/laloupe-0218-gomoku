@@ -5,6 +5,9 @@ import { PlayersService } from '../services/players.service';
 import { Room } from '../models/room';
 import { AngularFirestore } from 'angularfire2/firestore';
 
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { Player } from '../models/player';
+
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -15,16 +18,21 @@ export class GameComponent implements OnInit {
   turn = 0;
   roomId;
   room: Room;
-  opponentId;
   maxLenght;
   constructor(
     public authService: AuthService,
     public playersService: PlayersService,
     public router: Router,
     public route: ActivatedRoute,
-    private db: AngularFirestore) { }
+    private db: AngularFirestore,
+    private modalService: NgbModal) { }
 
-
+  openVerticallyCenteredWin(contentWin) {
+    this.modalService.open(contentWin, { centered: true });
+  }
+  openVerticallyCenteredLoose(contentLoose) {
+    this.modalService.open(contentLoose, { centered: true });
+  }
   ngOnInit() {
 
     this.roomId = this.route.snapshot.paramMap.get('id');
@@ -33,6 +41,16 @@ export class GameComponent implements OnInit {
       .valueChanges()
       .subscribe((room) => {
         this.room = room;
+        if (this.me && this.me.win) {
+          console.log('win');
+          const element: HTMLElement = document.getElementById('triggerModal') as HTMLElement;
+          element.click();
+        }
+        if (this.opponent && this.opponent.win) {
+          console.log('loose');
+          const element: HTMLElement = document.getElementById('looseModal') as HTMLElement;
+          element.click();
+        }
         if (!this.grid) {
           this.grid = [];
           for (let i = 0; i < this.room.gridLength; i += 1) {
@@ -42,39 +60,8 @@ export class GameComponent implements OnInit {
             }
           }
         }
-        for (let player of Object.keys(this.room.players)) {
-          if (player !== this.authService.user.uid) {
-            this.opponentId = player;
-          }
-        }
       });
   }
-
-  // get me() {
-  //   return this.room.players[this.myId];
-  // }
-
-  // get opponent() {
-  //   return this.room.players[this.opponentId];
-  // }
-
-  // get myId(): string {
-  //   return this.authService.user.uid;
-  // }
-  // get vsPlayerId(): string {
-  //   if (Object.keys(this.room.players)[0] === this.myId) {
-  //     return Object.keys(this.room.players)[1];
-  //   }
-  //   return Object.keys(this.room.players)[0];
-  // }
-
-  // get firstPlayer() {
-  //   return this.room.players[Object.keys(this.room.players)[0]];
-  // }
-
-  // get secondPlayer() {
-  //   return this.room.players[(Object.keys(this.room.players)[1])];
-  // }
 
   updateRoom() {
     this.db.doc<Room>('rooms/' + this.roomId).update(this.room);
@@ -90,11 +77,27 @@ export class GameComponent implements OnInit {
         this.direction(x, y, 3);
         this.direction(x, y, 4);
         this.room.turn = this.opponentId;
+        console.log(this.room);
         this.updateRoom();
         //this.whenClickedDisable(x,y);
 
       }
     }
+  }
+  get me(): Player {
+    return this.room.players[this.authService.user.uid];
+  }
+
+  get opponent(): Player {
+    return this.room.players[this.opponentId];
+  }
+
+
+  get opponentId(): string {
+    if (Object.keys(this.room.players)[0] === this.authService.user.uid) {
+      return Object.keys(this.room.players)[1];
+    }
+    return Object.keys(this.room.players)[0];
   }
 
   direction(x, y, direction) {
@@ -124,9 +127,21 @@ export class GameComponent implements OnInit {
         break;
       }
       console.log('maxlength', maxLenght);
+      // if (maxLenght === 5 && (Object.keys(this.room.players)[0] === this.authService.user.uid)) {
+      //   const element: HTMLElement = document.getElementById('triggerModal') as HTMLElement;
+      //   element.click();
+      // } else if (maxLenght === 5 && (Object.keys(this.room.players)[1] === this.authService.user.uid)) {
+      //   const element: HTMLElement = document.getElementById('looseModal') as HTMLElement;
+      //   element.click();
+      // }
       if (maxLenght === 5) {
-        alert('gagner');
-      }
+        // const element: HTMLElement = document.getElementById('triggerModal') as HTMLElement;
+        // element.click();
+        this.me.win = true;
+        // const element: HTMLElement = document.getElementById('triggerModal') as HTMLElement;
+        // element.click();
+        this.updateRoom();
+      } this.me.win = false;
     }
 
     for (let index = 1; index < maxCheck; index += 1) {
@@ -152,13 +167,23 @@ export class GameComponent implements OnInit {
       }
       console.log('maxlength', maxLenght);
       if (maxLenght === 5) {
-        alert('gagner');
+        // const element: HTMLElement = document.getElementById('triggerModal') as HTMLElement;
+        // element.click();
+        this.me.win = true;
+        this.updateRoom();
       }
+
+      //   if (maxLenght === 5 && (Object.keys(this.room.players)[0] === this.authService.user.uid)) {
+      //     const element: HTMLElement = document.getElementById('triggerModal') as HTMLElement;
+      //     element.click();
+      //   } else if (maxLenght === 5 && (Object.keys(this.room.players)[1] === this.authService.user.uid)) {
+      //     const element: HTMLElement = document.getElementById('looseModal') as HTMLElement;
+      //     element.click();
+      //   }
     }
   }
 
   checkMine(x, y) {
-    console.log(x, y);
     let myPosition = (y * this.room.gridLength) + x;
     if (this.room.grid[(myPosition)] === this.authService.user.uid) {
       return true;
@@ -187,6 +212,16 @@ export class GameComponent implements OnInit {
     }
     if (this.room.grid[(y * this.room.gridLength) + x] != this.authService.user.uid) {
       return 'image-cropper3';
+    }
+  }
+
+  getImgUrl(x, y) {
+    if (this.checkMine(x, y)) {
+      let img = localStorage.getItem('pion_img');
+      if (img) {
+        return 'url(\'assets/img/' + img + '\')';
+      }
+      return 'url(\'assets/img/black_pion.png\')';
     }
   }
 

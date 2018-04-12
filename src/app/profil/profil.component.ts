@@ -14,6 +14,11 @@ export class ProfilComponent implements OnInit {
 
   }
 
+  imgSelected(img) {
+    localStorage.setItem('pion_img', img);
+    console.log(localStorage.getItem('pion_img'));
+  }
+
   goBack() {
     window.history.back();
   }

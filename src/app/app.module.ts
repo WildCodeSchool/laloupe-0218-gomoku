@@ -20,6 +20,8 @@ import { AuthService } from './services/auth.service';
 import { ProfilComponent } from './profil/profil.component';
 import { MatchmakingComponent } from './matchmaking/matchmaking.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +42,7 @@ import { MatchmakingComponent } from './matchmaking/matchmaking.component';
     AppRoutingModule,
     AngularFirestoreModule,
     HttpClientModule,
+    NgbModule.forRoot(),
   ],
   providers: [AuthService, PlayersService],
   bootstrap: [AppComponent],

@@ -16,15 +16,13 @@
   <div class="row">
     <div class="col-md-5 col-lg-3">
       <div class="profil">
-        <div *ngIf="authService.user " class="padding-user-img">
+        <div *ngIf="authService.user" class="padding-user-img">
           <div class="shine">
             <img class="vertical-align" src="{{authService.user.photoURL}}" alt="img-profil-user">
           </div>
         </div>
         <p class="text-right">WELCOME</p>
-        <p *ngIf="authService.user " class="text-right"> {{authService.user.displayName}} </p>
-        <br>
-        <br>
+        <p *ngIf="authService.user" class="text-right"> {{authService.user.displayName}} </p>
         <div class="levels">
           <div class="w-333 baloo">
             Level 1
@@ -54,86 +52,86 @@
       </div>
       <div class="row mg-t-3vh">
         <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/black_pion.png" alt="black piece">
+          <img class="pieces" src="assets/img/black_pion.png" (click)="imgSelected('black_pion.png')" alt="black piece">
         </div>
         <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/white_pion.png" alt="white piece">
+          <img class="pieces" src="assets/img/white_pion.png" (click)="imgSelected('white_pion.png')" alt="white piece">
         </div>
         <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/blackmetal_pion.png" alt="blackmetal piece">
+          <img class="pieces" src="assets/img/blackmetal_pion.png" (click)="imgSelected('blackmetal_pion.png')" alt="blackmetal piece">
         </div>
         <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/silver_pion.png" alt="silver piece">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/silvermetal_pion.png" alt="silvermetal piece">
-        </div>
-        <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/gold_pion.png" alt="gold piece">
-        </div>
-        <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/green_pion.png" alt="gold piece">
-        </div>
-        <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/applegreen_pion.png" alt="gold piece">
+          <img class="pieces" src="assets/img/silver_pion.png" (click)="imgSelected('silver_pion.png')" alt="silver piece">
         </div>
       </div>
       <div class="row">
         <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/neon3_pion.png" alt="gold piece">
+          <img class="pieces" src="assets/img/silvermetal_pion.png" (click)="imgSelected('silvermetal_pion.png')" alt="silvermetal piece">
         </div>
         <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/ocean_pion.png" alt="gold piece">
+          <img class="pieces" src="assets/img/gold_pion.png" (click)="imgSelected('gold_pion.png')" alt="gold piece">
         </div>
         <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/red_pion.png" alt="gold piece">
+          <img class="pieces" src="assets/img/green_pion.png" (click)="imgSelected('green_pion.png')" alt="gold piece">
         </div>
         <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/neon2_pion.png" alt="gold piece">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/pink_pion.png" alt="gold piece">
-        </div>
-        <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/neon1_pion.png" alt="gold piece">
-        </div>
-        <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/purple_pion.png" alt="gold piece">
-        </div>
-        <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/orange_pion.png" alt="gold piece">
+          <img class="pieces" src="assets/img/applegreen_pion.png" (click)="imgSelected('applegreen_pion.png')" alt="gold piece">
         </div>
       </div>
       <div class="row">
         <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/blue_pion.png" alt="gold piece">
+          <img class="pieces" src="assets/img/neon3_pion.png" (click)="imgSelected('neon3_pion.png')" alt="gold piece">
         </div>
         <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/deepblue_pion.png" alt="gold piece">
+          <img class="pieces" src="assets/img/ocean_pion.png" (click)="imgSelected('ocean_pion.png')" alt="gold piece">
         </div>
         <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/yellow_pion.png" alt="gold piece">
+          <img class="pieces" src="assets/img/red_pion.png" (click)="imgSelected('red_pion.png')" alt="gold piece">
         </div>
         <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/sun_pion.png" alt="gold piece">
+          <img class="pieces" src="assets/img/neon2_pion.png" (click)="imgSelected('neon2_pion.png')" alt="gold piece">
         </div>
       </div>
       <div class="row">
         <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/sunset_pion.png" alt="gold piece">
+          <img class="pieces" src="assets/img/pink_pion.png" (click)="imgSelected('pink_pion.png')" alt="gold piece">
         </div>
         <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/rainbow_pion.png" alt="gold piece">
+          <img class="pieces" src="assets/img/neon1_pion.png" (click)="imgSelected('neon1_pion.png')" alt="gold piece">
         </div>
         <div class="col-3 rounded">
-          <img class="pieces" src="assets/img/radial_pion.png" alt="gold piece">
+          <img class="pieces" src="assets/img/purple_pion.png" (click)="imgSelected('purple_pion.png')" alt="gold piece">
         </div>
         <div class="col-3 rounded">
-          <img class="pieces" src="../assets/img/bloody_pion.png" alt="gold piece">
+          <img class="pieces" src="assets/img/orange_pion.png" (click)="imgSelected('orange_pion.png')" alt="gold piece">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/blue_pion.png" (click)="imgSelected('blue_pion.png')" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/deepblue_pion.png" (click)="imgSelected('deepblue_pion.png')" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/yellow_pion.png" (click)="imgSelected('yellow_pion.png')" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/sun_pion.png" (click)="imgSelected('sun_pion.png')" alt="gold piece">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/sunset_pion.png" (click)="imgSelected('sunset_pion.png')" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/rainbow_pion.png" (click)="imgSelected('rainbow_pion.png')" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/radial_pion.png" (click)="imgSelected('radial_pion.png')" alt="gold piece">
+        </div>
+        <div class="col-3 rounded">
+          <img class="pieces" src="assets/img/bloody_pion.png" (click)="imgSelected('bloody_pion.png')" alt="gold piece">
         </div>
       </div>
     </div>
@@ -172,8 +170,6 @@
             <div class="col-8">
               It is a board game for two players who take turns in putting black and white stones on the board. Each players' goal is to
               create an unbroken row of five stones horizontally, vertically, or diagonally.
-              <br>
-              <br> Only exactly five stones in a row win, rows of six or more, called overlines, do not count and the game continues.
             </div>
           </div>
         </div>
