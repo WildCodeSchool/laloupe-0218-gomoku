@@ -64,6 +64,7 @@ export class GameComponent implements OnInit {
   }
 
   updateRoom() {
+    console.log(this.room);
     this.db.doc<Room>('rooms/' + this.roomId).update(this.room);
   }
 
