@@ -5,6 +5,8 @@ import { PlayersService } from '../services/players.service';
 import { Room } from '../models/room';
 import { AngularFirestore } from 'angularfire2/firestore';
 
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -22,9 +24,12 @@ export class GameComponent implements OnInit {
     public playersService: PlayersService,
     public router: Router,
     public route: ActivatedRoute,
-    private db: AngularFirestore) { }
+    private db: AngularFirestore,
+    private modalService: NgbModal) { }
 
-
+  openVerticallyCentered(content) {
+    this.modalService.open(content, { centered: true });
+  }
   ngOnInit() {
 
     this.roomId = this.route.snapshot.paramMap.get('id');
@@ -49,32 +54,6 @@ export class GameComponent implements OnInit {
         }
       });
   }
-
-  // get me() {
-  //   return this.room.players[this.myId];
-  // }
-
-  // get opponent() {
-  //   return this.room.players[this.opponentId];
-  // }
-
-  // get myId(): string {
-  //   return this.authService.user.uid;
-  // }
-  // get vsPlayerId(): string {
-  //   if (Object.keys(this.room.players)[0] === this.myId) {
-  //     return Object.keys(this.room.players)[1];
-  //   }
-  //   return Object.keys(this.room.players)[0];
-  // }
-
-  // get firstPlayer() {
-  //   return this.room.players[Object.keys(this.room.players)[0]];
-  // }
-
-  // get secondPlayer() {
-  //   return this.room.players[(Object.keys(this.room.players)[1])];
-  // }
 
   updateRoom() {
     this.db.doc<Room>('rooms/' + this.roomId).update(this.room);
@@ -125,7 +104,8 @@ export class GameComponent implements OnInit {
       }
       console.log('maxlength', maxLenght);
       if (maxLenght === 5) {
-        alert('GG EZ');
+        const element: HTMLElement = document.getElementById('triggerModal') as HTMLElement;
+        element.click();
       }
     }
 
@@ -152,7 +132,8 @@ export class GameComponent implements OnInit {
       }
       console.log('maxlength', maxLenght);
       if (maxLenght === 5) {
-        alert('GG EZ');
+        const element: HTMLElement = document.getElementById('triggerModal') as HTMLElement;
+        element.click();
       }
     }
   }
