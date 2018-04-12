@@ -17,7 +17,6 @@ export class GameComponent implements OnInit {
   turn = 0;
   roomId;
   room: Room;
-  opponentId;
   maxLenght;
   constructor(
     public authService: AuthService,
@@ -47,11 +46,6 @@ export class GameComponent implements OnInit {
             }
           }
         }
-        for (const player of Object.keys(this.room.players)) {
-          if (player !== this.authService.user.uid) {
-            this.opponentId = player;
-          }
-        }
       });
   }
 
@@ -69,11 +63,19 @@ export class GameComponent implements OnInit {
         this.direction(x, y, 3);
         this.direction(x, y, 4);
         this.room.turn = this.opponentId;
+        console.log(this.room);
         this.updateRoom();
         // this.whenClickedDisable(x,y);
 
       }
     }
+  }
+
+  get opponentId(): string {
+    if (Object.keys(this.room.players)[0] === this.authService.user.uid) {
+      return Object.keys(this.room.players)[1];
+    }
+    return Object.keys(this.room.players)[0];
   }
 
   direction(x, y, direction) {
