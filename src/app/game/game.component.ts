@@ -11,7 +11,7 @@ import { Player } from '../models/player';
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
-  styleUrls: ['./game.component.css']
+  styleUrls: ['./game.component.css'],
 })
 export class GameComponent implements OnInit {
   grid;
@@ -69,8 +69,7 @@ export class GameComponent implements OnInit {
   }
 
   cellClicked(x, y): any {
-    if (this.room.turn == this.authService.user.uid) {
-      // console.log((this.room.gridLength * y) + x);
+    if (this.room.turn === this.authService.user.uid) {
       if (this.room.players && this.room.turn) {
         this.room.grid[(y * this.room.gridLength) + x] = this.authService.user.uid;
         this.direction(x, y, 1);
@@ -80,8 +79,6 @@ export class GameComponent implements OnInit {
         this.room.turn = this.opponentId;
         console.log(this.room);
         this.updateRoom();
-        //this.whenClickedDisable(x,y);
-
       }
     }
   }
@@ -103,7 +100,7 @@ export class GameComponent implements OnInit {
 
   direction(x, y, direction) {
     let maxLenght = 1;
-    let maxCheck = 5;
+    const maxCheck = 5;
 
 
     for (let index = 1; index < maxCheck; index += 1) {
@@ -128,19 +125,8 @@ export class GameComponent implements OnInit {
         break;
       }
       console.log('maxlength', maxLenght);
-      // if (maxLenght === 5 && (Object.keys(this.room.players)[0] === this.authService.user.uid)) {
-      //   const element: HTMLElement = document.getElementById('triggerModal') as HTMLElement;
-      //   element.click();
-      // } else if (maxLenght === 5 && (Object.keys(this.room.players)[1] === this.authService.user.uid)) {
-      //   const element: HTMLElement = document.getElementById('looseModal') as HTMLElement;
-      //   element.click();
-      // }
       if (maxLenght === 5) {
-        // const element: HTMLElement = document.getElementById('triggerModal') as HTMLElement;
-        // element.click();
         this.me.win = true;
-        // const element: HTMLElement = document.getElementById('triggerModal') as HTMLElement;
-        // element.click();
         this.updateRoom();
       } this.me.win = false;
     }
@@ -168,57 +154,35 @@ export class GameComponent implements OnInit {
       }
       console.log('maxlength', maxLenght);
       if (maxLenght === 5) {
-        // const element: HTMLElement = document.getElementById('triggerModal') as HTMLElement;
-        // element.click();
         this.me.win = true;
         this.updateRoom();
-      }
-
-      //   if (maxLenght === 5 && (Object.keys(this.room.players)[0] === this.authService.user.uid)) {
-      //     const element: HTMLElement = document.getElementById('triggerModal') as HTMLElement;
-      //     element.click();
-      //   } else if (maxLenght === 5 && (Object.keys(this.room.players)[1] === this.authService.user.uid)) {
-      //     const element: HTMLElement = document.getElementById('looseModal') as HTMLElement;
-      //     element.click();
-      //   }
+      } this.me.win = false;
     }
   }
 
   checkMine(x, y) {
-    let myPosition = (y * this.room.gridLength) + x;
+    const myPosition = (y * this.room.gridLength) + x;
     if (this.room.grid[(myPosition)] === this.authService.user.uid) {
       return true;
     }
     return false;
   }
 
-
-
-  //isWon() {
-
-  // if (maxLenght === 5) {
-  //   console.log('you win');
-  // }
-  // whenClickedDisable(x, y){
-  //   if((this.room.grid[(y * this.room.gridLength) + x] == this.authService.user.uid) || (this.room.grid[(y * this.room.gridLength) + x] != this.authService.user.uid)){
-  //     this.cellClicked(x,y).disabled = true;
-  // }
-  // }
   getImg(x, y) {
     if (Number(this.room.grid[(y * this.room.gridLength) + x]) === 1) {
       return 'image-cropper1';
     }
-    if (this.room.grid[(y * this.room.gridLength) + x] == this.authService.user.uid) {
+    if (this.room.grid[(y * this.room.gridLength) + x] === this.authService.user.uid) {
       return 'image-cropper2';
     }
-    if (this.room.grid[(y * this.room.gridLength) + x] != this.authService.user.uid) {
+    if (this.room.grid[(y * this.room.gridLength) + x] !== this.authService.user.uid) {
       return 'image-cropper3';
     }
   }
 
   getImgUrl(x, y) {
     if (this.checkMine(x, y)) {
-      let img = localStorage.getItem('pion_img');
+      const img = localStorage.getItem('pion_img');
       if (img) {
         return 'url(\'assets/img/' + img + '\')';
       }

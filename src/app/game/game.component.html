@@ -7,7 +7,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link oxygen" data-toggle="modal" data-target="#exampleModalCenter">Rules</a>
+        <a class="nav-item nav-link oxygen" data-toggle="modal" data-target="#rulesModal">Rules</a>
         <a class="nav-item nav-link oxygen" routerLink="/profil">Profile</a>
         <a class="nav-item nav-link oxygen" (click)="authService.logout()">Logout</a>
       </div>
@@ -42,8 +42,7 @@
   </div>
 </div>
 <!-- -----------------------Modal---------------------------------------------- -->
-<div class=" modal fade " id="exampleModalCenter " tabindex="-1 " role="dialog " aria-labelledby="exampleModalCenterTitle
-            " aria-hidden="true ">
+<div class="modal fade" id="rulesModal" tabindex="-1 " role="dialog " aria-labelledby="exampleModalCenterTitle" aria-hidden="true ">
   <div class="modal-dialog modal-dialog-centered modal-lg " role="document ">
     <div class="modal-content ">
       <div class="modal-header ">
