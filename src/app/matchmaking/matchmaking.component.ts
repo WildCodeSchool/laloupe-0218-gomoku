@@ -17,7 +17,7 @@ export class MatchmakingComponent implements OnInit {
   private authSubscription: Subscription;
   gridLength = 15;
   constructor(
-    private authService: AuthService,
+    public authService: AuthService,
     private db: AngularFirestore,
     private router: Router) { }
 
