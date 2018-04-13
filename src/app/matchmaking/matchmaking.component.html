@@ -1,0 +1,68 @@
+<div class="container-fluid padding-0">
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand moyko" href="#">Gomoku</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+      aria-expanded="false" aria-label="Toggle navigation" routerLink="/landing-page">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link oxygen" data-toggle="modal" data-target="#exampleModalCenter">Rules</a>
+        <a class="nav-item nav-link oxygen" routerLink="/profil">Profile</a>
+        <a class="nav-item nav-link oxygen" (click)="authService.logout()">Logout</a>
+      </div>
+    </div>
+  </nav>
+  <div class="row">
+    <div class="col-12">
+      <h1 class="oxygen text-center margin-top-3vh"> WAITING FOR AN OPPONENT...</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="sk-circle">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -----------------------Modal---------------------------------------------- -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title baloo" id="exampleModalLongTitle">Rules of the game !</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body oxygen">
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <img src="assets/img/gomoku-rules.png" alt="gomoku">
+            </div>
+            <div class="col-8">
+              It is a board game for two players who take turns in putting black and white stones on the board. Each players' goal is to
+              create an unbroken row of five stones horizontally, vertically, or diagonally.
+              <br>
+              <br> Only exactly five stones in a row win, rows of six or more, called overlines, do not count and the game continues.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

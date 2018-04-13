@@ -11,7 +11,7 @@ export const environment = {
     databaseURL: 'https://gomoku-projet-2.firebaseio.com',
     projectId: 'gomoku-projet-2',
     storageBucket: 'gomoku-projet-2.appspot.com',
-    messagingSenderId: '1001534234475'
-  }
+    messagingSenderId: '1001534234475',
+  },
 };
 

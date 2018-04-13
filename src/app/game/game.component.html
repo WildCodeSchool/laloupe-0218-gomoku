@@ -1,4 +1,4 @@
-<div class="container-fluid padding-0">
+<div *ngIf="room" class="container-fluid padding-0">
   <nav class="navbar navbar-expand-md navbar-light bg-light">
     <a class="navbar-brand moyko" href="#">Gomoku</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
@@ -7,7 +7,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link oxygen" data-toggle="modal" data-target="#exampleModalCenter">Rules</a>
+        <a class="nav-item nav-link oxygen" data-toggle="modal" data-target="#rulesModal">Rules</a>
         <a class="nav-item nav-link oxygen" routerLink="/profil">Profile</a>
         <a class="nav-item nav-link oxygen" (click)="authService.logout()">Logout</a>
       </div>
@@ -16,46 +16,50 @@
   <div class="row margin-0 margin-top">
     <div class="col-md-5 col-lg-3">
       <div class="profil">
-        <div *ngIf="authService.user | async as user" class="padding-user-img">
+        <div *ngIf="authService.user " class="padding-user-img">
           <div class="shine">
-            <img class="vertical-align" src="{{user.photoURL}}" alt="img-profil-user">
+            <img class="vertical-align" src="{{authService.user.photoURL}}" alt="img-profil-user">
           </div>
         </div>
         <p class="text-right">WELCOME</p>
-        <p *ngIf="authService.user | async as user" class="text-right"> {{user.displayName}} </p>
+        <p *ngIf="authService.user" class="text-right"> {{authService.user.displayName}} </p>
+      </div>
+      <div class="whosturn">
+        <div *ngIf="this.room.turn !== this.authService.user.uid; else opponentturn" class="baloo flash-red">Opponent turn...</div>
+        <ng-template #opponentturn>
+          <div class="baloo flash-green">It's your turn</div>
+        </ng-template>
       </div>
     </div>
-    <div class="col-md-7 col-lg-6">
-      <div class="board">
-        <div class="table"></div>
+    <div class="connect4 col-lg-9">
+      <div class="line" *ngFor="let line of grid; let x = index">
+        <div class="cell" *ngFor="let cell of line; let y = index" (click)="cellClicked(x,y)" [ngClass]="{'active' : room.turn}">
+          <div class="image-cropper" [ngClass]="getImg(x,y)" [style.background]="getImgUrl(x,y)">
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="chatbox"></div>
     </div>
   </div>
 </div>
 <!-- -----------------------Modal---------------------------------------------- -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title baloo" id="exampleModalLongTitle">Rules of the game !</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+<div class="modal fade" id="rulesModal" tabindex="-1 " role="dialog " aria-labelledby="exampleModalCenterTitle" aria-hidden="true ">
+  <div class="modal-dialog modal-dialog-centered modal-lg " role="document ">
+    <div class="modal-content ">
+      <div class="modal-header ">
+        <h5 class="modal-title baloo " id="exampleModalLongTitle ">Rules of the game !</h5>
+        <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
+          <span aria-hidden="true ">&times;</span>
         </button>
       </div>
-      <div class="modal-body oxygen">
-        <div class="container">
-          <div class="row">
-            <div class="col-4">
-              <img src="assets/img/gomoku-rules.png" alt="gomoku">
+      <div class="modal-body oxygen ">
+        <div class="container ">
+          <div class="row ">
+            <div class="col-4 ">
+              <img src="assets/img/gomoku-rules.png " alt="gomoku ">
             </div>
-            <div class="col-8">
+            <div class="col-8 ">
               It is a board game for two players who take turns in putting black and white stones on the board. Each players' goal is to
               create an unbroken row of five stones horizontally, vertically, or diagonally.
-              <br>
-              <br> Only exactly five stones in a row win, rows of six or more, called overlines, do not count and the game continues.
             </div>
           </div>
         </div>
@@ -64,3 +68,59 @@
   </div>
 </div>
 <app-footer></app-footer>
+
+
+
+<button class="btn btn-outline-primary mb-1" id="triggerModal" (click)="openVerticallyCenteredWin(contentWin)">Modal vertically centered</button>
+
+<ng-template #contentWin let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h1 class="modal-title youwin baloo">YOU WIN</h1>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <div class="container modal-buttons">
+      <div class="row modal-buttons">
+        <div class="col-6">
+          <div class="cl-effect-green text-center">
+            <a href="/matchmaking" data-hover="Desultory">Retag</a>
+          </div>
+        </div>
+        <div class="col-6 modal-buttons">
+          <div class="cl-effect-red text-center modal-buttons">
+            <a (click)="c('Close click')" data-hover="Desultory">Close</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<button class="btn btn-outline-primary mb-1" id="looseModal" (click)="openVerticallyCenteredLoose(contentLoose)">Modal vertically centered</button>
+
+<ng-template #contentLoose let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h1 class="modal-title youwin baloo">YOU LOOSE</h1>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <div class="container modal-buttons">
+      <div class="row modal-buttons">
+        <div class="col-6">
+          <div class="cl-effect-green text-center">
+            <a href="/matchmaking" data-hover="Desultory">Retag</a>
+          </div>
+        </div>
+        <div class="col-6 modal-buttons">
+          <div class="cl-effect-red text-center modal-buttons">
+            <a (click)="c('Close click')" data-hover="Desultory">Close</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

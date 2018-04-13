@@ -5,342 +5,401 @@
   src: url(assets/fonts/Moyko.ttf);
 }
 
-@media screen and (width:768px) {
-  .navbar {
-    width: 100%;
-    height: 70px;
-    background-image: url(assets/img/tweed.png);
-  }
-  .navbar a {
-    color: white;
-    cursor: pointer;
-  }
-  .moyko {
-    font-size: 3em;
-    font-weight: 700;
-    font-family: "Moyko.ttf", sans-serif;
-    text-shadow: -2px 3px 8px rgba(0, 0, 0, 0.79);
-    color: white;
-  }
-  .oxygen {
-    font-family: 'Oxygen', sans-serif;
-  }
-  .baloo {
-    font-family: 'Baloo', cursive, sans-serif;
-  }
-  button {
-    margin-top: 60px;
-  }
-  .textGame {
-    text-decoration: underline;
-    padding-left: 13%;
-    padding-bottom: 2%;
-  }
-  .border {
-    border: 3px solid black
-  }
-  .board {
-    width: 400px;
-    height: 400px;
-    border: 3px solid #000000;
-  }
-  table,
-  tbody {
-    width: 100%;
-    height: 100%;
-  }
-  tr {
-    width: 500px;
-    height: 20.888888888888px;
-  }
-  td {
-    width: 20.888888888888px;
-    border: 1px solid #ada7a7;
-  }
-  .chatbox {
-    width: 100%;
-    height: 300px;
-    border: 3px solid #999999;
-    margin: 0 !important;
-  }
-  .padding-0 {
-    padding: 0;
-  }
-  .margin-0 {
-    margin: 0;
-  }
-  .margin-top {
-    margin-top: 40px;
-  }
-  .profil {
-    height: 100px;
-    border: 3px solid #999999;
-    border-bottom: none;
-    overflow: hidden;
-  }
-  .profil img {
-    height: 80px;
-    border-radius: 50%;
-  }
-  .padding-user-img {
-    padding: 10px;
-    overflow: hidden;
-    float: left;
-  }
-  .profil p {
-    font-weight: bold;
-    font-size: 2em;
-    height: 100px;
-    line-height: 50px;
-    font-family: 'Baloo', cursive, sans-serif;
-    text-shadow: -2px 3px 8px rgba(150, 150, 150, 0.79);
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-image: url(assets/img/tweed.png);
+}
+
+.navbar a {
+  color: white;
+  cursor: pointer;
+}
+
+.moyko {
+  font-size: 3em;
+  font-weight: 700;
+  font-family: "Moyko.ttf", sans-serif;
+  text-shadow: -2px 3px 8px rgba(0, 0, 0, 0.79);
+  color: white;
+}
+
+.oxygen {
+  font-family: 'Oxygen', sans-serif;
+}
+
+.baloo {
+  font-family: 'Baloo', cursive, sans-serif;
+}
+
+button {
+  margin-top: 60px;
+}
+
+.col-lg-6 {
+  height: 82vh;
+}
+
+.border {
+  border: 3px solid black
+}
+
+.board {
+  width: 600px;
+  height: 600px;
+  border: 3px solid #000000;
+  border-radius: 10px;
+  background-image: url(assets/img/bg-board.jpg);
+  overflow: hidden;
+  margin-top: 3vh;
+}
+
+table,
+tbody {
+  width: 100%;
+  height: 100%;
+}
+
+td {
+  border: 1px solid #ada7a7;
+}
+
+.profil {
+  height: 200px;
+  overflow: hidden;
+  margin-top: 3vh;
+}
+
+.profil img {
+  height: 100px;
+  border-radius: 50%;
+}
+
+.padding-user-img {
+  padding: 25px;
+  overflow: hidden;
+  float: left;
+}
+
+.shine {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.shine::before {
+  position: absolute;
+  top: 0;
+  left: -75%;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 50%;
+  height: 100%;
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+  -webkit-transform: skewX(-25deg);
+  transform: skewX(-25deg);
+}
+
+.shine:hover::before {
+  -webkit-animation: shine .75s;
+  animation: shine .75s;
+}
+
+@-webkit-keyframes shine {
+  100% {
+    left: 125%;
   }
 }
 
-@media screen and (width:1024px) {
-  .navbar {
-    width: 100%;
-    height: 70px;
-    background-image: url(assets/img/tweed.png);
-  }
-  .navbar a {
-    color: white;
-    cursor: pointer;
-  }
-  .moyko {
-    font-size: 3em;
-    font-weight: 700;
-    font-family: "Moyko.ttf", sans-serif;
-    text-shadow: -2px 3px 8px rgba(0, 0, 0, 0.79);
-    color: white;
-  }
-  .oxygen {
-    font-family: 'Oxygen', sans-serif;
-  }
-  .baloo {
-    font-family: 'Baloo', cursive, sans-serif;
-  }
-  button {
-    margin-top: 60px;
-  }
-  .textGame {
-    text-decoration: underline;
-    padding-left: 13%;
-    padding-bottom: 2%;
-  }
-  .border {
-    border: 3px solid black
-  }
-  .board {
-    width: 500px;
-    height: 500px;
-    border: 3px solid #000000;
-    border-radius: 10px;
-    background-image: url(assets/img/bg-board.jpg);
-    overflow: hidden;
-  }
-  table,
-  tbody {
-    width: 100%;
-    height: 100%;
-  }
-  tr {
-    width: 500px;
-    height: 26.444444444444px;
-  }
-  td {
-    width: 26.444444444444px;
-    border: 1px solid #ada7a7;
-  }
-  .chatbox {
-    width: 100%;
-    height: 350px;
-    border: 3px solid #999999;
-    margin: 0 !important;
-    background: white;
-  }
-  .addon {
-    width: 155px;
-    height: 500px;
-    margin-left: -15px;
-    border: 3px solid #000000;
-    border-radius: 10px;
-    background: white;
-  }
-  .padding-0 {
-    padding: 0;
-  }
-  .margin-0 {
-    margin: 0;
-  }
-  .margin-top {
-    margin-top: 2px;
-  }
-  .profil {
-    height: 150px;
-    border: 3px solid #999999;
-    border-bottom: none;
-    overflow: hidden;
-    background: white;
-  }
-  .profil img {
-    height: 100px;
-    border-radius: 50%;
-  }
-  .padding-user-img {
-    padding: 25px;
-    overflow: hidden;
-    float: left;
-  }
-  .profil p {
-    font-weight: bold;
-    font-size: 2.5em;
-    height: 150px;
-    line-height: 75px;
-    font-family: 'Baloo', cursive, sans-serif;
-    text-shadow: -2px 3px 8px rgba(150, 150, 150, 0.79);
+@keyframes shine {
+  100% {
+    left: 125%;
   }
 }
 
-@media screen and (min-width:1200px) {
-  .navbar {
-    width: 100%;
-    height: 70px;
-    background-image: url(assets/img/tweed.png);
+.profil p {
+  font-weight: bold;
+  font-size: 1.1em;
+  line-height: 40px;
+  font-family: 'Baloo', cursive, sans-serif;
+  text-shadow: -2px 3px 8px rgba(150, 150, 150, 0.79);
+  margin: 0;
+}
+
+.profil p:first-of-type {
+  margin-top: 30px !important;
+  font-size: 1.5em;
+}
+
+.whosturn {
+  width: 100%;
+  height: 50px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.whosturn .baloo {
+  font-size: 2.4em;
+  margin-top: 100px;
+}
+
+.whosturn div {
+  color: grey;
+}
+
+.flash-green {
+  animation-name: flashgreen;
+  animation-duration: 0.6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+}
+
+@keyframes flashgreen {
+  from {
+    color: green;
   }
-  .navbar a {
-    color: white;
-    cursor: pointer;
+  to {
+    color: black;
   }
-  .moyko {
-    font-size: 3em;
-    font-weight: 700;
-    font-family: "Moyko.ttf", sans-serif;
-    text-shadow: -2px 3px 8px rgba(0, 0, 0, 0.79);
-    color: white;
+}
+
+.flash-red {
+  animation-name: flashred;
+  animation-duration: 0.6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+}
+
+@keyframes flashred {
+  from {
+    color: red;
   }
-  .oxygen {
-    font-family: 'Oxygen', sans-serif;
+  to {
+    color: black;
   }
-  .baloo {
-    font-family: 'Baloo', cursive, sans-serif;
-  }
-  button {
-    margin-top: 60px;
-  }
-  .col-lg-6 {
-    height: 82vh;
-  }
-  .border {
-    border: 3px solid black
-  }
-  .board {
-    width: 600px;
-    height: 600px;
-    border: 3px solid #000000;
-    border-radius: 10px;
-    background-image: url(assets/img/bg-board.jpg);
-    overflow: hidden;
-    margin-top: 3vh;
-  }
-  table,
-  tbody {
-    width: 100%;
-    height: 100%;
-  }
-  td {
-    border: 1px solid #ada7a7;
-  }
-  .profil {
-    height: 150px;
-    overflow: hidden;
-    margin-top: 3vh;
-  }
-  .profil img {
-    height: 100px;
-    border-radius: 50%;
-  }
-  .padding-user-img {
-    padding: 25px;
-    overflow: hidden;
-    float: left;
-  }
-  .shine {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background: #fff;
-    overflow: hidden;
-    border-radius: 50%;
-  }
-  .shine::before {
-    position: absolute;
-    top: 0;
-    left: -75%;
-    z-index: 2;
-    display: block;
-    content: '';
-    width: 50%;
-    height: 100%;
-    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
-    -webkit-transform: skewX(-25deg);
-    transform: skewX(-25deg);
-  }
-  .shine:hover::before {
-    -webkit-animation: shine .75s;
-    animation: shine .75s;
-  }
-  @-webkit-keyframes shine {
-    100% {
-      left: 125%;
-    }
-  }
-  @keyframes shine {
-    100% {
-      left: 125%;
-    }
-  }
-  .profil p {
-    font-weight: bold;
-    font-size: 1.1em;
-    line-height: 40px;
-    font-family: 'Baloo', cursive, sans-serif;
-    text-shadow: -2px 3px 8px rgba(150, 150, 150, 0.79);
-    margin: 0;
-  }
-  .profil p:first-of-type {
-    margin-top: 30px !important;
-    font-size: 1.5em;
-  }
-  .chatbox {
-    width: 100%;
-    height: 350px;
-    border: 3px solid #999999;
-    margin-top: 3vh;
-    background: white;
-  }
-  .addon {
-    width: 100%;
-    height: 600px;
-    border: 3px solid #000000;
-    border-radius: 10px;
-    background: white;
-    margin-top: 3vh;
-  }
-  .padding-0 {
-    padding: 0;
-  }
-  .margin-0 {
-    margin: 0;
-  }
-  .margin-top {
-    margin-top: 2px;
-  }
-  .modal-title {
-    width: 100%;
-    text-align: center;
-  }
+}
+
+#triggerModal {
+  display: none;
+}
+
+#looseModal {
+  display: none;
+}
+
+.addon {
+  width: 100%;
+  height: 600px;
+  border: 3px solid #000000;
+  border-radius: 10px;
+  background: white;
+  margin-top: 3vh;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.margin-top {
+  margin-top: 2px;
+}
+
+.modal-title {
+  width: 100%;
+  text-align: center;
+}
+
+.game {
+  margin-top: 15px !important;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.line {
+  display: block;
+  clear: both;
+  height: 43px;
+}
+
+.connect4 {
+  width: 100%;
+  padding: 0;
+  margin-top: 3vh;
+  padding-left: 5vw;
+}
+
+.cell {
+  position: relative;
+  display: inline-block;
+  width: 43px;
+  height: 43px;
+  border: rgb(187, 187, 187) 1px solid;
+  padding: 0;
+  margin: 0;
+}
+
+.image-cropper1 {
+  background: transparent;
+  height: 40px;
+  width: 40px;
+}
+
+.image-cropper2 {
+  background: url("assets/img/black_pion.png");
+  background-size: 35px !important;
+  height: 35px;
+  width: 35px;
+  margin: 0 auto;
+  margin-top: 3px;
+}
+
+.image-cropper3 {
+  background: url("assets/img/white_pion.png");
+  background-size: 35px !important;
+  height: 35px;
+  width: 35px;
+  margin: 0 auto;
+  margin-top: 3px;
+  z-index: 999;
+  overflow: visible;
+}
+
+.youwin {
+  height: 100px;
+  font-size: 5em !important;
+}
+
+.modal-footer {
+  height: 100px !important;
+}
+
+.modal-buttons {
+  height: 100%;
+}
+
+/* Effect green: circle */
+
+.cl-effect-green a {
+  position: relative;
+  display: inline-block;
+  margin: 15px 25px;
+  outline: none;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  font-size: 1.35em;
+}
+
+.cl-effect-green a::before,
+.cl-effect-green a::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(9, 255, 0, 0.5);
+  border-radius: 50%;
+  content: '';
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(0.2);
+  -moz-transform: translateX(-50%) translateY(-50%) scale(0.2);
+  transform: translateX(-50%) translateY(-50%) scale(0.2);
+}
+
+.cl-effect-green a::after {
+  width: 70px;
+  height: 70px;
+  border-width: 6px;
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(0.8);
+  -moz-transform: translateX(-50%) translateY(-50%) scale(0.8);
+  transform: translateX(-50%) translateY(-50%) scale(0.8);
+}
+
+.cl-effect-red a::before,
+.cl-effect-red a::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(255, 0, 0, 0.5);
+  border-radius: 50%;
+  content: '';
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(0.2);
+  -moz-transform: translateX(-50%) translateY(-50%) scale(0.2);
+  transform: translateX(-50%) translateY(-50%) scale(0.2);
+}
+
+.cl-effect-red a::after {
+  width: 70px;
+  height: 70px;
+  border-width: 6px;
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(0.8);
+  -moz-transform: translateX(-50%) translateY(-50%) scale(0.8);
+  transform: translateX(-50%) translateY(-50%) scale(0.8);
+}
+
+.cl-effect-green a:hover::before,
+.cl-effect-green a:hover::after,
+.cl-effect-green a:focus::before,
+.cl-effect-green a:focus::after {
+  opacity: 1;
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+  -moz-transform: translateX(-50%) translateY(-50%) scale(1);
+  transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+/* Effect red: circle */
+
+.cl-effect-red a {
+  position: relative;
+  display: inline-block;
+  margin: 15px 25px;
+  outline: none;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  font-size: 1.35em;
+}
+
+.cl-effect-red a:hover::before,
+.cl-effect-red a:hover::after,
+.cl-effect-red a:focus::before,
+.cl-effect-red a:focus::after {
+  opacity: 1;
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+  -moz-transform: translateX(-50%) translateY(-50%) scale(1);
+  transform: translateX(-50%) translateY(-50%) scale(1);
 }
